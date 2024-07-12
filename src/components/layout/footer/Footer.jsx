@@ -9,29 +9,33 @@ import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <>
-      <div className='footer-wrapper p-5 mt-5'>
+      <div className='footer-wrapper p-5 border-top'>
         <div className="row w-100">
           <div className="col-md-3  d-flex  flex-column align-items-center ">
 
             <h4 className='mb-3'>Knowlege On Tap</h4>
-            <div className='border rounded '>
-              <button className='btn rounded-0 w-100 d-flex border-bottom py-1 align-items-center justify-content-center'>
-                <FontAwesomeIcon icon={faAndroid} size='xl' className='me-2 color_light' />
-                <h5 className='fontFifty color_light'>Get the Android App</h5>
-              </button>
+            <div >
+              <Link className='text-decoration-none' to={'https://play.google.com/store/apps?hl=en-IN'}>
+                <button className=' btn btn-outline-danger rounded-0 rounded-top w-100 d-flex border-bottom-danger py-1 align-items-center justify-content-center'>
+                  <FontAwesomeIcon icon={faAndroid} size='xl' className='me-2 color_light' />
+                  <h5 className='fontFifty color_light'>Get the Android App</h5>
+                </button>
+              </Link>
 
-              <button className='btn w-100 rounded-0 d-flex py-1 align-items-center justify-content-center'>
-                <FontAwesomeIcon icon={faApple} size='xl' className='me-2 color_light' />
-                <h6 className='fontFifty color_light'>Get the iOS App</h6>
-              </button>
+              <Link className='text-decoration-none'>
+                <button className='btn btn-outline-danger rounded-bottom w-100 rounded-0 d-flex py-1 align-items-center justify-content-center'>
+                  <FontAwesomeIcon icon={faApple} size='xl' className='me-2 color_light' />
+                  <h6 className='fontFifty color_light'>Get the iOS App</h6>
+                </button>
+              </Link>
             </div>
-          </div>
+          </div>  
           <div className="col-md-3 ">
             <div className='mx-5'>
               <h4 className='mb-3'>Links</h4>
-              <p>Home</p>
+              <Link><p>Home</p></Link>
               <p>About us</p>
-              <p>Resourses</p>
+              <Link><p>Resourses</p></Link>
               <p>Career</p>
             </div>
           </div>
