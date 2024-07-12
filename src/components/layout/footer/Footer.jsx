@@ -35,7 +35,7 @@ function Footer() {
               <h4 className='mb-3'>Links</h4>
               <p>Home</p>
               <p>About us</p>
-              <Link><p>Resourses</p></Link>
+              <p>Resourses</p>
               <p>Career</p>
             </div>
           </div>
