@@ -33,7 +33,7 @@ function Footer() {
           <div className="col-md-3 ">
             <div className='mx-5'>
               <h4 className='mb-3'>Links</h4>
-              <p>Home</p>
+              <Link><p>Home</p></Link>
               <p>About us</p>
               <p>Resourses</p>
               <p>Career</p>
