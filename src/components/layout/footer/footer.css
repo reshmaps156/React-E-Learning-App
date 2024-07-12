@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 :root{
   --footerDescription : #D1D7E0
 }
@@ -21,4 +26,6 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
+    
 }
+
