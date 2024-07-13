@@ -4,7 +4,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+
 
 function Header() {
   return (
@@ -18,7 +18,7 @@ function Header() {
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto" style={{marginLeft:'100vh',color:'#802BB1'}}>
+          <Nav className="me-auto" style={{color:'#802BB1'}}>
             <Nav.Link href="#home" className='me-5' style={{color:'#802BB1',fontSize:'18px'}}>Home</Nav.Link>
             <Nav.Link href="#link" className='me-5' style={{color:'#802BB1',fontSize:'18px'}}>About</Nav.Link>
             <Nav.Link href="#link" className='me-5' style={{color:'#802BB1',fontSize:'18px'}}>Resources</Nav.Link>
