@@ -34,13 +34,28 @@ function Home() {
         <h2 className='p-5 ms-5 ' style={{fontWeight:'bold'}}>Most Popular Courses</h2>
       </div>
       <Row className=' ms-4 mb-5'>
-        <Col sm={12} md={4} className='ms-'>
+        <Col sm={12} md={4} className='mb-3'>
           <div className='card p-4 shadow' style={{maxWidth:'480px'}}>
             <div className="row ">
-              <div className="col-md-6">
+              <div className="col-md-6-sm-12">
                 <img src="https://www.gkftii.com/blog/img/multimedia-courses-scope-and-career.webp" style={{height:'160px' ,width:'200px'}} alt="" />
               </div>
-              <div className="col-md-6 ">
+              <div className="col-md-6-sm-12 ">
+                <h3>Course name</h3>
+                <p className='text-dark'>asnhbsciu ncianc jncnai csjbc</p>
+                <p>Last updated 5 days ago</p>
+
+              </div>
+            </div>
+          </div>
+        </Col>
+        <Col sm={12} md={4} className='mb-3'>
+          <div className='card p-4 shadow' style={{maxWidth:'480px'}}>
+            <div className="row">
+              <div className="col-md-6-sm-12 ">
+                <img src="https://www.gkftii.com/blog/img/multimedia-courses-scope-and-career.webp" style={{height:'160px' ,width:'200px'}} alt="" />
+              </div>
+              <div className="col-md-6-sm-12 ">
                 <h3>Course name</h3>
                 <p className='text-dark'>asnhbsciu ncianc jncnai csjbc</p>
                 <p>Last updated 5 days ago</p>
@@ -52,25 +67,10 @@ function Home() {
         <Col sm={12} md={4} className=''>
           <div className='card p-4 shadow' style={{maxWidth:'480px'}}>
             <div className="row ">
-              <div className="col-md-6">
+              <div className="col-md-6-sm-12">
                 <img src="https://www.gkftii.com/blog/img/multimedia-courses-scope-and-career.webp" style={{height:'160px' ,width:'200px'}} alt="" />
               </div>
-              <div className="col-md-6 ">
-                <h3>Course name</h3>
-                <p className='text-dark'>asnhbsciu ncianc jncnai csjbc</p>
-                <p>Last updated 5 days ago</p>
-
-              </div>
-            </div>
-          </div>
-        </Col>
-        <Col sm={12} md={4} className=''>
-          <div className='card p-4 shadow' style={{maxWidth:'480px'}}>
-            <div className="row ">
-              <div className="col-md-6">
-                <img src="https://www.gkftii.com/blog/img/multimedia-courses-scope-and-career.webp" style={{height:'160px' ,width:'200px'}} alt="" />
-              </div>
-              <div className="col-md-6 ">
+              <div className="col-md-6-sm-12  ">
                 <h3>Course name</h3>
                 <p className='text-dark'>asnhbsciu ncianc jncnai csjbc</p>
                 <p>Last updated 5 days ago</p>
