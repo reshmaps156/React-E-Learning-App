@@ -6,7 +6,7 @@ import './home.css'
 
 function Home() {
   return (
-    <div style={{backgroundColor:'rgb(219, 219, 219)'}}>
+    <div style={{backgroundColor:'rgb(219, 219, 218)'}}>
       <Row className='mb-5' >
         <Col sm={12} md={6} style={{marginTop:'120px'}}>
         <div className='p-5 justify-content-center align-items-center '>
