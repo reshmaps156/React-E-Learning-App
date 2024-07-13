@@ -6,7 +6,7 @@ import './home.css'
 
 function Home() {
   return (
-    <div>
+    <div style={{backgroundColor:'rgb(219, 219, 218)'}}>
       <Row className='mb-5' >
         <Col sm={12} md={6} style={{marginTop:'120px'}}>
         <div className='p-5 justify-content-center align-items-center '>
@@ -37,10 +37,10 @@ function Home() {
         <Col sm={12} md={4} className='mb-3'>
           <div className='card p-4 shadow' style={{maxWidth:'480px'}}>
             <div className="row ">
-              <div className="col-md-6-sm-12">
+              <div className="col-md-6">
                 <img src="https://www.gkftii.com/blog/img/multimedia-courses-scope-and-career.webp" style={{height:'160px' ,width:'200px'}} alt="" />
               </div>
-              <div className="col-md-6-sm-12 ">
+              <div className="col-md-6">
                 <h3>Course name</h3>
                 <p className='text-dark'>asnhbsciu ncianc jncnai csjbc</p>
                 <p>Last updated 5 days ago</p>
@@ -52,10 +52,10 @@ function Home() {
         <Col sm={12} md={4} className='mb-3'>
           <div className='card p-4 shadow' style={{maxWidth:'480px'}}>
             <div className="row">
-              <div className="col-md-6-sm-12 ">
+              <div className="col-md-6 ">
                 <img src="https://www.gkftii.com/blog/img/multimedia-courses-scope-and-career.webp" style={{height:'160px' ,width:'200px'}} alt="" />
               </div>
-              <div className="col-md-6-sm-12 ">
+              <div className="col-md-6 ">
                 <h3>Course name</h3>
                 <p className='text-dark'>asnhbsciu ncianc jncnai csjbc</p>
                 <p>Last updated 5 days ago</p>
@@ -67,10 +67,10 @@ function Home() {
         <Col sm={12} md={4} className=''>
           <div className='card p-4 shadow' style={{maxWidth:'480px'}}>
             <div className="row ">
-              <div className="col-md-6-sm-12">
+              <div className="col-md-6 ">
                 <img src="https://www.gkftii.com/blog/img/multimedia-courses-scope-and-career.webp" style={{height:'160px' ,width:'200px'}} alt="" />
               </div>
-              <div className="col-md-6-sm-12  ">
+              <div className="col-md-6  ">
                 <h3>Course name</h3>
                 <p className='text-dark'>asnhbsciu ncianc jncnai csjbc</p>
                 <p>Last updated 5 days ago</p>
