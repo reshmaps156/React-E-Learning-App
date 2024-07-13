@@ -20,7 +20,7 @@ function Landingpage() {
                             <h1 className='titleColor fw-bolder'>Fuel Your Knowledge.</h1>
                                <h1 className='titleColor fw-bolder'> Power Your Future</h1>
                             <p className=''> Learn Together, Grow Together. Connect with a Hive of Knowledge.</p>
-                            <Link to={'/home'}><button className='btn btn-primary py-2 px-4 rounded-0 shadow'>Get started</button></Link>
+                            <Link to={'/register'}><button className='btn btn-primary py-2 px-4 rounded-0 shadow'>Get started</button></Link>
                         </div>
                         <div className="col-md-5">
                             <div className=''>

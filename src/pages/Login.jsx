@@ -8,9 +8,9 @@ function Login() {
         <div className="login-container">
             <h1>Sign Up</h1>
             <div className="login-fields">
-                <input type="text" placeholder='Your Name' />
-                <input type="Email" placeholder='Email' />
-                <input type="password" placeholder='Password' />
+                <input type="text" placeholder='Your Name' className='text-white' />
+                <input type="Email" placeholder='Email' className='text-white' />
+                <input type="password" placeholder='Password' className='text-white' />
             </div>
             <button type='btn'>Continue</button>
             <p className='login-login'>Already have an account? <Link to={'/register'} style={{textDecoration:'none'}}><span>Login Here</span></Link></p>

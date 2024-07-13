@@ -8,8 +8,8 @@ function Register() {
         <div className="login-container">
             <h1>Sign In</h1>
             <div className="login-fields">
-                <input type="Email" placeholder='Email' id='regUser' />
-                <input type="password" placeholder='Password' id='regpswd' />
+                <input type="Email" placeholder='Email' className='text-white' />
+                <input type="password" placeholder='Password' className='text-white' />
             </div>
             <button type='btn'>login</button>
             <p className='login-login'>Are you a new User? <Link to={'/login'} style={{textDecoration:'none'}}><span>Register</span></Link></p>
