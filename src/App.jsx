@@ -6,6 +6,7 @@ import Landingpage from './components/main pages/landing page/Landingpage'
 import Home from './components/main pages/home/Home'
 import Profile from './components/main pages/profile/Profile'
 import Login from './components/auth/login/Login'
+import Register from './components/auth/Register'
 
 
 
@@ -25,6 +26,8 @@ function App() {
         <Route path='/home' element={<Home/>}/>
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
+       
 
       </Routes>
       <Footer/>
