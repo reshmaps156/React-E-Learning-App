@@ -3,3 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
+body{
+    overflow-x: hidden;/* x axis scrolling is hide*/
+}
+.selected{
+    color: rgb(233, 184, 8);
+    font-size:xx-large;
+}
