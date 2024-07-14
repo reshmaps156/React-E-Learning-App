@@ -10,8 +10,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons/faBuildingColumns'
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
+
+import Reviews from './Reviews'
 //import ExampleCarouselImage from 'components/ExampleCarouselImage';
-import Reviews from '../components/reviews/Reviews'
 
 function Profile() {
 
@@ -26,7 +27,7 @@ function Profile() {
    <>  
    {/*components part */} 
      <div className='d-flex'>
-          <div className='shadow px-3' style={{ width: '400px' ,height:'100%'}}>
+          <div className='shadow px-3' style={{ width: '400px' ,height:''}}>
               <div className='py-4 ms-4 me-3 mt-3 d-flex'><FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger'/><h1 className='text-danger px-4 mt-3 fw-bolder' style={{width:'250px'}}>Edu Mall</h1></div>
 
               <div className='py-4 mt-4 ms-3'>

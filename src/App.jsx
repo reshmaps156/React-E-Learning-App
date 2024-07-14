@@ -7,6 +7,9 @@ import Home from './components/main pages/home/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Profile from './pages/Profile'
+import Profile from './components/main pages/profile/Profile'
+import Login from './components/auth/login/Login'
+
 
 
 
@@ -26,6 +29,8 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile' element={<Profile/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
       <Footer/>
     </>
