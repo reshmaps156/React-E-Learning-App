@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import './header.css'
+import { Link } from 'react-router-dom';
 
 function Header() {
   return (
@@ -26,7 +27,7 @@ function Header() {
               <Nav.Link href="#link" className='me-5' style={{color:'#802BB1',fontSize:'18px'}}>About</Nav.Link>
               <Nav.Link href="#link" className='me-5' style={{color:'#802BB1',fontSize:'18px'}}>Resources</Nav.Link>
               <Nav.Link href="#link" className='me-5' style={{color:'#802BB1',fontSize:'18px'}}>Career</Nav.Link>
-              <button  className='btn btn-primary px-5 '>Login</button>
+              <Link to={'/login'}><button  className='btn btn-primary px-5 '>Login</button></Link>
               
             </Nav>
           </Navbar.Collapse>
