@@ -10,8 +10,9 @@ import Carousel from 'react-bootstrap/Carousel';
 import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons/faBuildingColumns'
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
+
+import Reviews from './Reviews'
 //import ExampleCarouselImage from 'components/ExampleCarouselImage';
-import Reviews from '../components/reviews/Reviews'
 
 function Profile() {
 

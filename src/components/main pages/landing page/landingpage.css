@@ -15,3 +15,8 @@ p{
     background-color: #564f6f;
     border: 1px solid #564f6fa5;
 }
+@media(max-width:768px){
+    .landingImg{
+        width: 70%;
+    }
+}
