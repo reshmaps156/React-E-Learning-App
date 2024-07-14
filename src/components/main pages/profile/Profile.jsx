@@ -13,11 +13,20 @@ import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
 
 import Reviews from './Reviews'
 import { Link } from 'react-router-dom'
+import Book from './Book'
 //import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
 function Profile() {
 
     const [show, setShow] = useState(true);
+    const [display,setDisplay]=useState(false)
+
+    const handleBook = ()=>{
+        setDisplay(true)
+    }
+    const handleBookClose = ()=>{
+        setDisplay(false)
+    }
 
 
 
@@ -32,13 +41,13 @@ function Profile() {
                     <div className='py-4 ms-4 me-3 mt-3 d-flex'><FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger' /><h1 className='text-danger px-4 mt-3 fw-bolder' style={{ width: '250px' }}>Edu Mall</h1></div>
 
                     <div className='py-4 mt-4 ms-3'>
-                        <div className='ms-2 py-2 '> <button className='btn btn-info w-100'><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
+                        <div className='ms-2 py-2 '> <button onClick={handleBookClose} className='btn btn-info w-100'><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
 
-                        <Link><div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div></Link>
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
 
@@ -85,25 +94,30 @@ function Profile() {
 
 
                 {/*profile navbars field */}
-                <div className=' bg-danger shadow col-md-8  d-flex justify-content-between align-items-center' style={{ height: '190px' }}>
-                    <div className='d-flex '>
-                        <div>
-                            <label htmlFor="profileimg">
-                                <input id='profileimg' type="file" style={{ display: 'none' }} />
-                                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="no image" style={{ width: '150px', height: '150px', borderRadius: '50%' }} className='mt-3 ms-5' />
-                            </label>
+                <div className='col-md-8'>
+                    <div className=' bg-danger shadow  d-flex justify-content-between align-items-center' style={{ height: '190px' }}>
+                        <div className='d-flex '>
+                            <div>
+                                <label htmlFor="profileimg">
+                                    <input id='profileimg' type="file" style={{ display: 'none' }} />
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="no image" style={{ width: '150px', height: '150px', borderRadius: '50%' }} className='mt-3 ms-5' />
+                                </label>
+                            </div>
+                            <div className='mt-5 ms-4'>
+                                <h3 className='text-light'>James cameron</h3>
+    
+                            </div>
                         </div>
-                        <div className='mt-5 ms-4'>
-                            <h3 className='text-light'>James cameron</h3>
-
+                        <div className='px-3 d-flex ms-5'>
+                            <button className='btn btn-info'><FontAwesomeIcon icon={faPlus} className='px-2' />Add New Courses</button>
+                            <div><FontAwesomeIcon icon={faBars} className='text-light px-5' size='2x' /></div>
                         </div>
+                      
+                        
                     </div>
-                    <div className='px-3 d-flex ms-5'>
-                        <button className='btn btn-info'><FontAwesomeIcon icon={faPlus} className='px-2' />Add New Courses</button>
-                        <div><FontAwesomeIcon icon={faBars} className='text-light px-5' size='2x' /></div>
-                    </div>
-                    
+                    {display && <Book/>}
                 </div>
+                
             </div>
 
             {/*answers field */}

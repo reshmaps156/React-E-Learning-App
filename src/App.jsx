@@ -7,6 +7,7 @@ import Home from './components/main pages/home/Home'
 import Profile from './components/main pages/profile/Profile'
 import Login from './components/auth/login/Login'
 import Register from './components/auth/Register'
+import Book from './components/main pages/profile/Book'
 
 
 
@@ -27,6 +28,7 @@ function App() {
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
+        <Route path='/book' element={<Book/>}/>
        
 
       </Routes>
