@@ -3,11 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-<<<<<<< HEAD
 body {
     overflow-x: hidden;
 }
-=======
 html{
     scroll-behavior: smooth;
 }
@@ -18,4 +16,3 @@ body{
     color: rgb(233, 184, 8);
     font-size:xx-large;
 }
->>>>>>> 261df3014090f463357c01918646d3db0ccf137c
