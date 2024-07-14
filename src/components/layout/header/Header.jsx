@@ -27,7 +27,7 @@ function Header() {
               <Nav.Link href="#link" className='me-5' style={{color:'#802BB1',fontSize:'18px'}}>About</Nav.Link>
               <Nav.Link href="#link" className='me-5' style={{color:'#802BB1',fontSize:'18px'}}>Resources</Nav.Link>
               <Nav.Link href="#link" className='me-5' style={{color:'#802BB1',fontSize:'18px'}}>Career</Nav.Link>
-              <Link to={'/login'}><button  className='btn btn-primary px-5 '>Login</button></Link>
+              <Link to={'/register'}><button  className='btn btn-primary px-5 '>Login</button></Link>
               
             </Nav>
           </Navbar.Collapse>
