@@ -11,12 +11,6 @@ import Book from './components/main pages/profile/Book'
 import About from './components/main pages/about/About'
 
 
-
-
-
-
-
-
 function App() {
   
 
