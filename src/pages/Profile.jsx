@@ -27,7 +27,7 @@ function Profile() {
    {/*components part */} 
      <div className='d-flex'>
           <div className='shadow px-3' style={{ width: '400px' ,height:'100%'}}>
-              <div className='py-4 ms-4 me-3 mt-3 d-flex'><FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger'/><h1 className='text-danger px-4 mt-3 fw-bolder' style={{width:'250px'}}>Edu Mall</h1></div>
+              <div className='py-4 ms-4 me-3 mt-3 d-flex'><FontAwesomeIcon icon={faBuildingColumns} size='3x' className='text-danger'/><h1 className='text-danger px-4 mt-3 fw-bolder' style={{width:'250px'}}>E-Learning</h1></div>
 
               <div className='py-4 mt-4 ms-3'>
               <div className='ms-2 py-2 '> <button className='btn btn-info w-100'><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>

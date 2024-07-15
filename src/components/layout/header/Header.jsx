@@ -8,6 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function Header() {
   return (
+  
     <Navbar expand="lg" style={{backgroundColor:'#2D283E'}} className='p-3'>
       <Container>
       <Navbar.Brand href="#home" className='me-5'>
@@ -29,6 +30,7 @@ function Header() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+  
   )
 }
 
