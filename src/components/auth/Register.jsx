@@ -56,6 +56,5 @@ function Register() {
     
   )
 }
-<script src='./logic.js'></script>
 
 export default Register

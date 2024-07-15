@@ -22,6 +22,5 @@ function Login() {
   )
   
 }
-<script src='./logic.js'></script>
 
 export default Login
