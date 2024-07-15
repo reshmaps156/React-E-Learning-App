@@ -23,7 +23,6 @@ function App() {
         <Route path='/profile' element={<Profile/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
-        <Route path='/book' element={<Book/>}/>
        <Route path='/about' element={<About/>}/>
 
       </Routes>
