@@ -116,15 +116,16 @@ function Profile() {
                         
                     </div>
                     {display && <Book/>}
+                    {/*answers field */}
+            {!show &&
+                <div className='shadow mt-3 p-4 me-3'  >
+                    <Reviews />
+                </div>}
                 </div>
                 
             </div>
 
-            {/*answers field */}
-            {!show &&
-                <div className='shadow p-3' style={{ marginTop: '-500px', marginLeft: '400px', height: '100%', width: '145vh' }} >
-                    <Reviews />
-                </div>}
+            
         </>
     )
 }
