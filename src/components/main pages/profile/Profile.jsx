@@ -1,7 +1,6 @@
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons/faBookOpen'
 import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
 import './profile.css'
-import { faLayerGroup } from '@fortawesome/free-solid-svg-icons/faLayerGroup'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -10,57 +9,56 @@ import Carousel from 'react-bootstrap/Carousel';
 import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons/faBuildingColumns'
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
-
 import Reviews from './Reviews'
 import { Link } from 'react-router-dom'
 import Book from './Book'
+import Wishlist from './Wishlist'
+import Myprofile from './Myprofile'
+import Enrolledcourses from './Enrolledcourses'
+import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons/faArrowsRotate'
 //import ExampleCarouselImage from 'components/ExampleCarouselImage';
+
 
 function Profile() {
 
     const [show, setShow] = useState(true);
-    const [display,setDisplay]=useState(false)
+   
+   const [display1,setDisplay1]=useState(false)
+   const [display,setDisplay]=useState(false)
+   const [display2,setDisplay2]=useState(false)
+   const [display3,setDisplay3]=useState(false)
 
+
+   const handle1 = ()=>{
+    setDisplay1(true)
+    }
+    const handle2 = ()=>{
+        setDisplay2(true)
+        }
     const handleBook = ()=>{
         setDisplay(true)
+        
+    }
+
+    const handle3 = ()=>{
+        setDisplay3(true)
+        
     }
     const handleBookClose = ()=>{
         setDisplay(false)
+        setDisplay1(false)
+        setDisplay2(false)
+        setDisplay3(false)
     }
-
-
-
-
-
 
     return (
         <>
             {/*components part */}
             <div className='d-flex row profileAlignment'>
-                <div className='shadow px-3 col-md-4' >
-                    <div className='py-4 ms-4 me-3 mt-3 d-flex'><FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger' /><h1 className='text-danger px-4 mt-3 fw-bolder' style={{ width: '250px' }}>Edu Mall</h1></div>
-
-                    <div className='py-4 mt-4 ms-3'>
-                        <div className='ms-2 py-2 '> <button onClick={handleBookClose} className='btn btn-info w-100'><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
-
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
-
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
-
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
-
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
-
-                        <div className='ms-2 py-2' >
-
-                            <button type='button' className='btn btn-info w-100' onClick={() => setShow(!show)}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
-                        </div>
-
-                    </div>
-
-
-                    {/*carosal part/ ads */}
-                    <div className='p-3'>
+                <div className='shadow px-4 col-md-4' >
+                    <div className='py-4 ms-4 me-3 mt-3 '>
+                        {/*carosal part/ ads */}
+                    <div className='py-3' style={{marginTop:'-50px'}}>
                         <Carousel>
                             <Carousel.Item>
                                 {/*<ExampleCarouselImage text="First slide" />*/}
@@ -89,6 +87,31 @@ function Profile() {
                             </Carousel.Item>
                         </Carousel>
                     </div>
+                       {/* <FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger' /><h1 className='text-danger px-4 mt-3 fw-bolder' style={{ width: '250px' }}>Edu Mall</h1>*/}
+                        
+                        <div className='w-100 ms-1' style={{margin:'-25px'}}> <button onClick={handleBookClose} className='btn btn-secondary w-100 mt-3'><FontAwesomeIcon icon={faArrowsRotate}  className='px-4' size='2x' />Refresh</button></div>
+                        </div>
+
+                    <div className='ms-3 '>
+                        
+
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle2}><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
+
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle3}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
+
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
+
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle1}><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
+
+                        <div className='ms-2 py-2' >
+
+                            <button type='button' className='btn btn-info w-100' onClick={() => setShow(!show)}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
+                        </div>
+
+                    </div>
+
+
+                    <img src="./src/assets/image2.png" alt="no image" width="400px" height={"300px"} style={{marginTop:'-30px'}}/> 
 
                 </div>
 
@@ -122,9 +145,35 @@ function Profile() {
 
             {/*answers field */}
             {!show &&
-                <div className='shadow p-3' style={{ marginTop: '-500px', marginLeft: '400px', height: '100%', width: '145vh' }} >
+                <div className='shadow p-3' style={{ marginTop: '-650px', marginLeft: '500px', height: '95vh', width: '130vh' }} >
                     <Reviews />
                 </div>}
+        
+            {display1 &&
+            <div className='shadow p-3' style={{ marginTop: '-650px', marginLeft: '500px', height: '95vh', width: '130vh' }} >
+            <Wishlist />
+             </div>
+
+            }
+
+             {display2 &&
+            <div className='shadow p-3' style={{ marginTop: '-650px', marginLeft: '500px', height: '95vh', width: '130vh' }} >
+            
+            <Myprofile />
+             </div>
+
+            }
+            {display3 &&
+            <div className='shadow p-3' style={{ marginTop: '-650px', marginLeft: '500px', height: '95vh', width: '130vh' }} >
+            
+            <Enrolledcourses />
+             </div>
+
+            }
+            
+
+
+
         </>
     )
 }

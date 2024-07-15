@@ -40,8 +40,9 @@ const [val1,setVal1] = useState('')
    
 
    {/*{[...Array(2)].map((_,index1)=>{})} */}
- 
+   <h4 className='text-success fs-2 fw-bolder ms-3'> Wishlist</h4>
     <div className='d-flex justify-content-between'>
+   
         <div className='ms-3 d-flex'>
             {/*<img src="https://img.freepik.com/free-photo/abstract-autumn-beauty-multi-colored-leaf-vein-pattern-generated-by-ai_188544-9871.jpg" alt=" no image"  width={'300px'}/>*/}
             <iframe width="300" height="200" src="https://www.youtube.com/embed/IssB4wkge4o?" title="എന്താണ് Artificial Intelligence | Explained in Malayalam" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

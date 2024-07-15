@@ -9,8 +9,7 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-<<<<<<< HEAD
-  
+  <>
     <Navbar expand="lg" style={{backgroundColor:'#2D283E'}} className='p-3'>
       <Container>
       <Navbar.Brand href="#home" className='me-5'>
@@ -30,7 +29,6 @@ function Header() {
             
           </Nav>
         </Navbar.Collapse>
-=======
     <Navbar  expand="lg" style={{backgroundColor:'#2D283E'}} className='p-3'>
       <Container className='d-flex justify-content-between '>
       <div>
@@ -53,10 +51,11 @@ function Header() {
             </Nav>
           </Navbar.Collapse>
        </div>
->>>>>>> 0e70971336722e9617e46a41ced5779e9f902763
       </Container>
     </Navbar>
-  
+    </Container>
+    </Navbar>
+  </>
   )
 }
 
