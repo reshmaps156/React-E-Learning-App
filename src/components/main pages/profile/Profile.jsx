@@ -41,8 +41,9 @@ function Profile() {
     return (
         <>
             {/*components part */}
+
             <div className='d-flex row profileAlignment'>
-                <div className='shadow px-3 col-md-4' >
+                <div className='shadow px-3 col-md-3' >
                     <div className='py-4 ms-4 me-3 mt-3 d-flex'><FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger' /><h1 className='text-danger px-4 mt-3 fw-bolder' style={{ width: '250px' }}>Edu Mall</h1></div>
 
                     <div className='py-4 mt-4 ms-3'>
@@ -101,58 +102,63 @@ function Profile() {
 
 
                 {/*profile navbars field */}
-                <div className='col-md-8'>
-                    <div className=' bg-danger shadow  d-flex justify-content-between align-items-center row flex-row'>
-                        <div className='d-flex col-md-8 mb-2'>
+                <div className='col-md-9 '>
+                    <div className="row w-100 d-flex justify-content-between bg-danger">
+                        <div className="col-md-7">
                             <div className='d-flex'>
                                 <label htmlFor="profileimg">
                                     <input id='profileimg' type="file" style={{ display: 'none' }} />
-                                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="no image" style={{ width: '150px', height: '150px', borderRadius: '50%' }} className='mt-3 ms-5' />
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="no image" style={{ width: '150px', height: '150px', borderRadius: '50%' }} className='mt-3 ms-5 mb-3' />
                                 </label>
                                 <div className='mt-5 ms-4'>
-                                <h3 className='text-light'>James cameron</h3>
+                                    <h3 className='text-light'>User</h3>
+                                </div>
                             </div>
                         </div>
-                        <div className='px-3 d-flex ms-5'>
-                            <button className='btn btn-info' onClick={handleShow}><FontAwesomeIcon icon={faPlus} className='px-2' />Add New Courses</button>
-                            <div><FontAwesomeIcon icon={faBars} className='text-light px-5' size='2x' /></div>
+                        <div className="col-md-5">
+                            <div className='d-flex '>
+                                <button className='btn btn-info h-25 mt-5' onClick={handleShow}><FontAwesomeIcon icon={faPlus} />Add New Courses</button>
+                                <div><FontAwesomeIcon icon={faBars} className='text-light px-5 mt-5' size='2x' /></div>
+                            </div>
                         </div>
-
-                        <Modal show={show} onHide={handleClose}>
-                            <Modal.Header closeButton>
-                                <Modal.Title>Add New Course</Modal.Title>
-                            </Modal.Header>
-                            <Modal.Body>
-                                <p>Please fill the following details</p>
-                                <form className='border p-3 rounded border-secondary'>
-                                    <input type="text" placeholder='Course Title' className='form-control' />
-                                    <input type="text" placeholder='Course Image' className='form-control mt-3' />
-                                    <input type="text" placeholder='Course Url' className='form-control mt-3' />
-                                </form>
-                            </Modal.Body>
-                            <Modal.Footer>
-                                <Button variant="secondary" onClick={handleClose}>
-                                    Cancel
-                                </Button>
-                                <Button variant="primary" onClick={handleClose}>
-                                    upload
-                                </Button>
-                            </Modal.Footer>
-                        </Modal>
-
-
                     </div>
-                    {display && <Book />}
-                    {/*answers field */}
-                    {!shows &&
-                        <div className='shadow mt-3 p-4 me-3'  >
-                            <Reviews />
-                        </div>}
+                    <Modal show={show} onHide={handleClose}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Add New Course</Modal.Title>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <p>Please fill the following details</p>
+                            <form className='border p-3 rounded border-secondary'>
+                                <input type="text" placeholder='Course Title' className='form-control' />
+                                <input type="text" placeholder='Course Image' className='form-control mt-3' />
+                                <input type="text" placeholder='Course Url' className='form-control mt-3' />
+                            </form>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Button variant="secondary" onClick={handleClose}>
+                                Cancel
+                            </Button>
+                            <Button variant="primary" onClick={handleClose}>
+                                upload
+                            </Button>
+                        </Modal.Footer>
+                    </Modal>
+                    <div className="row ">
+                    <div>
+                            {display && <Book />}
+                            {/*answers field */}
+                            {!shows &&
+                                <div className='shadow mt-3 p-4 me-3'  >
+                                    <Reviews />
+                                </div>}
+                        </div>
+                    </div>
                 </div>
 
+
+
+                <div />
             </div>
-
-
         </>
     )
 }
