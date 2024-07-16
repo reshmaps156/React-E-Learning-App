@@ -16,9 +16,17 @@ import Modal from 'react-bootstrap/Modal';
 import Reviews from './Reviews'
 import { Link } from 'react-router-dom'
 import Book from './Book'
+import Adminpanel from './Adminpanel'
+import { loginUser } from '../../services/allApi'
+import Lecture from './Lecture'
+
+
+
+
 //import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
 function Profile() {
+
 
     const [shows, setShows] = useState(true);
     const [display, setDisplay] = useState(false)
@@ -32,6 +40,12 @@ function Profile() {
     const handleBookClose = () => {
         setDisplay(false)
     }
+    const handleAdmin = async () => {
+        const result = await loginUser()
+        const roll = result.data.map((data) => data.roll)
+        console.log(roll);
+    }
+    handleAdmin()
 
 
 
@@ -47,6 +61,8 @@ function Profile() {
                     <div className='py-4 ms-4 me-3 mt-3 d-flex'><FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger' /><h1 className='text-danger px-4 mt-3 fw-bolder' style={{ width: '250px' }}>Edu Mall</h1></div>
 
                     <div className='py-4 mt-4 ms-3'>
+                        <div className='ms-2 py-2'><Adminpanel/></div>
+
                         <div className='ms-2 py-2 '> <button onClick={handleBookClose} className='btn btn-info w-100'><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
@@ -144,13 +160,21 @@ function Profile() {
                         </Modal.Footer>
                     </Modal>
                     <div className="row ">
-                    <div>
+                        <div>
                             {display && <Book />}
                             {/*answers field */}
-                            {!shows &&
+                            {
+                                !shows &&
                                 <div className='shadow mt-3 p-4 me-3'  >
                                     <Reviews />
-                                </div>}
+                                </div>
+                            }
+                            <Lecture/>
+                            
+
+
+
+
                         </div>
                     </div>
                 </div>

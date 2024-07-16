@@ -1,25 +1,28 @@
 import React, { useState } from 'react'
 import './Login.css'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link,  useNavigate } from 'react-router-dom'
 import { loginUser } from '../../services/allApi'
 
 
 function Login() {
   const [email,setEmail] = useState("")
   const [password,setPassword] = useState("")
+ 
   const navigate = useNavigate()
-  // console.log(email,password);
+ 
   const handleLogin = async()=>{
     if(!password || !email){
       alert('Please fill the form completely')
     }else{
       const response = await loginUser()
-      // console.log(response.data);
+     
+      console.log(response.data);
       
       const fullEmail = response.data.map((data)=>data.email)
       const fullPassword = response.data.map((data)=>data.password)
-      // console.log( fullEmail,fullPassword);
+    
      if( fullEmail.find((data)=>data==email ) && fullPassword.find((pwrd)=>pwrd==password) ){
+      
       alert('Login successful')
       navigate('/profile')
      

@@ -11,7 +11,7 @@ function Register() {
     password:" ",
     roll:'user'
   })
-  console.log(userDetails);
+  // console.log(userDetails);
   const handleRegister = async(event)=>{
     event.preventDefault()
     const {username,email,password} = userDetails
