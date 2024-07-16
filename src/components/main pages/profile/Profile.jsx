@@ -102,15 +102,14 @@ function Profile() {
 
                 {/*profile navbars field */}
                 <div className='col-md-8'>
-                    <div className=' bg-danger shadow  d-flex justify-content-between align-items-center' style={{ height: '190px' }}>
-                        <div className='d-flex '>
-                            <div>
+                    <div className=' bg-danger shadow  d-flex justify-content-between align-items-center row flex-row'>
+                        <div className='d-flex col-md-8 mb-2'>
+                            <div className='d-flex'>
                                 <label htmlFor="profileimg">
                                     <input id='profileimg' type="file" style={{ display: 'none' }} />
                                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="no image" style={{ width: '150px', height: '150px', borderRadius: '50%' }} className='mt-3 ms-5' />
                                 </label>
-                            </div>
-                            <div className='mt-5 ms-4'>
+                                <div className='mt-5 ms-4'>
                                 <h3 className='text-light'>James cameron</h3>
                             </div>
                         </div>
