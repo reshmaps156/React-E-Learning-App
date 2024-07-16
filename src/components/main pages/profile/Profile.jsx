@@ -78,14 +78,6 @@ function Profile() {
     }
     handleAdmin()
 
-    
-
-
-
-
-
-
-
 
     return (
         <>
@@ -100,6 +92,7 @@ function Profile() {
                         </div>
 
                     <div className='py-1 ms-3'>
+                        <div className='ms-2 py-2 '> <button  onClick={handleBookClose} className='btn btn-success w-100'><Adminpanel/></button></div>
                     <div className='ms-2 py-2 '> <button onClick={handleBookClose} className='btn btn-light w-100'><FontAwesomeIcon icon={faArrowsRotate} className='px-4' size='2x' />Refresh</button></div>
                         <div className='ms-2 py-2 '><button className='btn btn-info w-100' onClick={handle4}><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
 
@@ -203,7 +196,9 @@ function Profile() {
                     <div>
                         {display4 &&
                             <div className='shadow mt-3 p-4 me-3 '>
+                                 <Lecture/>
                                 <Dashboard/>  
+                               
                             </div>}
                         
                             {display && <Book />}
