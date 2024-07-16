@@ -10,6 +10,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons/faBuildingColumns'
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 import Reviews from './Reviews'
 import { Link } from 'react-router-dom'
@@ -18,13 +20,16 @@ import Book from './Book'
 
 function Profile() {
 
-    const [show, setShow] = useState(true);
-    const [display,setDisplay]=useState(false)
+    const [shows, setShows] = useState(true);
+    const [display, setDisplay] = useState(false)
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
-    const handleBook = ()=>{
+    const handleBook = () => {
         setDisplay(true)
     }
-    const handleBookClose = ()=>{
+    const handleBookClose = () => {
         setDisplay(false)
     }
 
@@ -47,13 +52,15 @@ function Profile() {
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
 
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Other Courses</button></div>
+
                         <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
 
                         <div className='ms-2 py-2' >
 
-                            <button type='button' className='btn btn-info w-100' onClick={() => setShow(!show)}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
+                            <button type='button' className='btn btn-info w-100' onClick={() => setShows(!shows)}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
                         </div>
 
                     </div>
@@ -104,29 +111,48 @@ function Profile() {
                                 </label>
                                 <div className='mt-5 ms-4'>
                                 <h3 className='text-light'>James cameron</h3>
-    
                             </div>
-                            </div>
-                            
                         </div>
-                        <div className=' d-flex col-md-4'>
-                            <button className='btn btn-info'><FontAwesomeIcon icon={faPlus} className='px-2' />Add New Courses</button>
+                        <div className='px-3 d-flex ms-5'>
+                            <button className='btn btn-info' onClick={handleShow}><FontAwesomeIcon icon={faPlus} className='px-2' />Add New Courses</button>
                             <div><FontAwesomeIcon icon={faBars} className='text-light px-5' size='2x' /></div>
                         </div>
-                      
-                        
+
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Add New Course</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>
+                                <p>Please fill the following details</p>
+                                <form className='border p-3 rounded border-secondary'>
+                                    <input type="text" placeholder='Course Title' className='form-control' />
+                                    <input type="text" placeholder='Course Image' className='form-control mt-3' />
+                                    <input type="text" placeholder='Course Url' className='form-control mt-3' />
+                                </form>
+                            </Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Cancel
+                                </Button>
+                                <Button variant="primary" onClick={handleClose}>
+                                    upload
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+
+
                     </div>
-                    {display && <Book/>}
+                    {display && <Book />}
                     {/*answers field */}
-            {!show &&
-                <div className='shadow mt-3 p-4 me-3'  >
-                    <Reviews />
-                </div>}
+                    {!shows &&
+                        <div className='shadow mt-3 p-4 me-3'  >
+                            <Reviews />
+                        </div>}
                 </div>
-                
+
             </div>
 
-            
+
         </>
     )
 }
