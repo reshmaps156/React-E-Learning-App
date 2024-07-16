@@ -10,6 +10,8 @@ import Carousel from 'react-bootstrap/Carousel';
 import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons/faBuildingColumns'
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus'
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 import Reviews from './Reviews'
 import { Link } from 'react-router-dom'
@@ -19,12 +21,12 @@ import Book from './Book'
 function Profile() {
 
     const [show, setShow] = useState(true);
-    const [display,setDisplay]=useState(false)
+    const [display, setDisplay] = useState(false)
 
-    const handleBook = ()=>{
+    const handleBook = () => {
         setDisplay(true)
     }
-    const handleBookClose = ()=>{
+    const handleBookClose = () => {
         setDisplay(false)
     }
 
@@ -46,6 +48,8 @@ function Profile() {
                         <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
+
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Other Courses</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
 
@@ -105,27 +109,41 @@ function Profile() {
                             </div>
                             <div className='mt-5 ms-4'>
                                 <h3 className='text-light'>James cameron</h3>
-    
                             </div>
                         </div>
                         <div className='px-3 d-flex ms-5'>
-                            <button className='btn btn-info'><FontAwesomeIcon icon={faPlus} className='px-2' />Add New Courses</button>
+                            <button className='btn btn-info' onClick={handleShow}><FontAwesomeIcon icon={faPlus} className='px-2' />Add New Courses</button>
                             <div><FontAwesomeIcon icon={faBars} className='text-light px-5' size='2x' /></div>
                         </div>
-                      
-                        
+
+                        <Modal show={show} onHide={handleClose}>
+                            <Modal.Header closeButton>
+                                <Modal.Title>Modal heading</Modal.Title>
+                            </Modal.Header>
+                            <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                            <Modal.Footer>
+                                <Button variant="secondary" onClick={handleClose}>
+                                    Close
+                                </Button>
+                                <Button variant="primary" onClick={handleClose}>
+                                    Save Changes
+                                </Button>
+                            </Modal.Footer>
+                        </Modal>
+
+
                     </div>
-                    {display && <Book/>}
+                    {display && <Book />}
                     {/*answers field */}
-            {!show &&
-                <div className='shadow mt-3 p-4 me-3'  >
-                    <Reviews />
-                </div>}
+                    {!show &&
+                        <div className='shadow mt-3 p-4 me-3'  >
+                            <Reviews />
+                        </div>}
                 </div>
-                
+
             </div>
 
-            
+
         </>
     )
 }
