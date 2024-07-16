@@ -1,11 +1,10 @@
-import { faBookOpen } from '@fortawesome/free-solid-svg-icons/faBookOpen'
-import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
+
+
 import './profile.css'
 import { faLayerGroup } from '@fortawesome/free-solid-svg-icons/faLayerGroup'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+
 import { faUser } from '@fortawesome/free-solid-svg-icons/faUser'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { useState } from 'react'
+
 import Carousel from 'react-bootstrap/Carousel';
 import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons/faBuildingColumns'
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus'
@@ -14,8 +13,19 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 import Reviews from './Reviews'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import Book from './Book'
+import Wishlist from './Wishlist'
+import Myprofile from './Myprofile'
+import Enrolledcourses from './Enrolledcourses'
+import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons/faArrowsRotate'
+import Dashboard from './Dashboard'
+import { faBookOpen } from '@fortawesome/free-solid-svg-icons/faBookOpen'
+import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
+import './profile.css'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState } from 'react'
 import Adminpanel from './Adminpanel'
 import { loginUser } from '../../services/allApi'
 import Lecture from './Lecture'
@@ -23,19 +33,10 @@ import Lecture from './Lecture'
 
 
 
-import Wishlist from './Wishlist'
-import Myprofile from './Myprofile'
-import Enrolledcourses from './Enrolledcourses'
-import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons/faArrowsRotate'
-import Dashboard from './Dashboard'
-import Dropdown from 'react-bootstrap/Dropdown';
-
-
 
 
 
 function Profile() {
-
 
     const [shows, setShows] = useState(true);
     const [display, setDisplay] = useState(false)
@@ -70,6 +71,16 @@ function Profile() {
         setDisplay3(false)
         setDisplay4(false)
     }
+    const handleAdmin = async () => {
+        const result = await loginUser()
+        const roll = result.data.map((data) => data.roll)
+        console.log(roll);
+    }
+    handleAdmin()
+
+    
+
+
 
 
 
@@ -88,8 +99,9 @@ function Profile() {
                         {/*<h4 className='text-success px-4 mt-3 fw-bolder' style={{ width: '250px' }}></h4>*/}
                         </div>
 
-                    <div className='py-4 mt-4 ms-3'>
-                        <div className='ms-2 py-2 '> <button onClick={handleBookClose} className='btn btn-info w-100'><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
+                    <div className='py-1 ms-3'>
+                    <div className='ms-2 py-2 '> <button onClick={handleBookClose} className='btn btn-light w-100'><FontAwesomeIcon icon={faArrowsRotate} className='px-4' size='2x' />Refresh</button></div>
+                        <div className='ms-2 py-2 '><button className='btn btn-info w-100' onClick={handle4}><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle2}><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
 
@@ -189,13 +201,30 @@ function Profile() {
                     </Modal>
                     <div className="row ">
                     <div>
+                        {display4 &&
+                            <div className='shadow mt-3 p-4 me-3 '>
+                                <Dashboard/>  
+                            </div>}
+                        
                             {display && <Book />}
                             {/*answers field */}
-                            {
-                                !shows &&
+                            {!shows &&
                                 <div className='shadow mt-3 p-4 me-3'  >
                                     <Reviews />
                                 </div>}
+
+                             {display1 &&
+                                <div className='shadow mt-3 p-4 me-3'  >
+                                    <Wishlist />
+                                </div>}
+                             {display2 &&
+                                <div className='shadow mt-3 p-4 me-3'  >
+                                    <Myprofile />
+                                </div>}
+                            {display3 &&
+                                <div className='shadow mt-3 p-4 me-3'  >
+                                    <Enrolledcourses />
+                                </div>} 
                         </div>
                     </div>
                 </div>
@@ -209,3 +238,7 @@ function Profile() {
 }
 
 export default Profile
+
+
+
+
