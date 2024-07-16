@@ -20,8 +20,11 @@ import Book from './Book'
 
 function Profile() {
 
-    const [show, setShow] = useState(true);
+    const [shows, setShows] = useState(true);
     const [display, setDisplay] = useState(false)
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const handleBook = () => {
         setDisplay(true)
@@ -57,7 +60,7 @@ function Profile() {
 
                         <div className='ms-2 py-2' >
 
-                            <button type='button' className='btn btn-info w-100' onClick={() => setShow(!show)}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
+                            <button type='button' className='btn btn-info w-100' onClick={() => setShows(!shows)}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
                         </div>
 
                     </div>
@@ -118,15 +121,22 @@ function Profile() {
 
                         <Modal show={show} onHide={handleClose}>
                             <Modal.Header closeButton>
-                                <Modal.Title>Modal heading</Modal.Title>
+                                <Modal.Title>Add New Course</Modal.Title>
                             </Modal.Header>
-                            <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+                            <Modal.Body>
+                                <p>Please fill the following details</p>
+                                <form className='border p-3 rounded border-secondary'>
+                                    <input type="text" placeholder='Course Title' className='form-control' />
+                                    <input type="text" placeholder='Course Image' className='form-control mt-3' />
+                                    <input type="text" placeholder='Course Url' className='form-control mt-3' />
+                                </form>
+                            </Modal.Body>
                             <Modal.Footer>
                                 <Button variant="secondary" onClick={handleClose}>
-                                    Close
+                                    Cancel
                                 </Button>
                                 <Button variant="primary" onClick={handleClose}>
-                                    Save Changes
+                                    upload
                                 </Button>
                             </Modal.Footer>
                         </Modal>
@@ -135,7 +145,7 @@ function Profile() {
                     </div>
                     {display && <Book />}
                     {/*answers field */}
-                    {!show &&
+                    {!shows &&
                         <div className='shadow mt-3 p-4 me-3'  >
                             <Reviews />
                         </div>}
