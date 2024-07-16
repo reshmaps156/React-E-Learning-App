@@ -16,12 +16,25 @@ import Modal from 'react-bootstrap/Modal';
 import Reviews from './Reviews'
 import { Link } from 'react-router-dom'
 import Book from './Book'
-//import ExampleCarouselImage from 'components/ExampleCarouselImage';
+import Wishlist from './Wishlist'
+import Myprofile from './Myprofile'
+import Enrolledcourses from './Enrolledcourses'
+import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons/faArrowsRotate'
+import Dashboard from './Dashboard'
+import Dropdown from 'react-bootstrap/Dropdown';
+
+
+
+
 
 function Profile() {
 
     const [shows, setShows] = useState(true);
     const [display, setDisplay] = useState(false)
+    const [display1, setDisplay1] = useState(false)
+    const [display2, setDisplay2] = useState(false)
+    const [display3, setDisplay3] = useState(false)
+    const [display4, setDisplay4] = useState(false)
     const [show, setShow] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -29,9 +42,29 @@ function Profile() {
     const handleBook = () => {
         setDisplay(true)
     }
+    const handle1 = ()=>{
+        setDisplay1(true)
+    }
+    const handle2 = ()=>{
+        setDisplay2(true)
+    }
+    const handle3 = ()=>{
+        setDisplay3(true)
+    }
+    const handle4 = ()=>{
+        setDisplay4(true)
+}
+
     const handleBookClose = () => {
         setDisplay(false)
+        setDisplay1(false)
+        setDisplay2(false)
+        setDisplay3(false)
+        setDisplay4(false)
     }
+    
+
+
 
 
 
@@ -44,20 +77,25 @@ function Profile() {
 
             <div className='d-flex row profileAlignment'>
                 <div className='shadow px-3 col-md-3' >
-                    <div className='py-4 ms-4 me-3 mt-3 d-flex'><FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger' /><h1 className='text-danger px-4 mt-3 fw-bolder' style={{ width: '250px' }}>Edu Mall</h1></div>
+                    <div className='py-4 ms-4 me-3 mt-3 d-flex'>
+                       {/* <img src="./src/assets/image2.png" alt="no image" width={'300px'} height={'200px'} style={{marginTop:'-50px'}}/>*/}
+                        <FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger ms-5 px-5'/>
+                        {/*<h4 className='text-success px-4 mt-3 fw-bolder' style={{ width: '250px' }}></h4>*/}
+                        </div>
 
-                    <div className='py-4 mt-4 ms-3'>
-                        <div className='ms-2 py-2 '> <button onClick={handleBookClose} className='btn btn-info w-100'><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
+                    <div className='py-1 ms-3'>
+                    <div className='ms-2 py-2 '> <button onClick={handleBookClose} className='btn btn-light w-100'><FontAwesomeIcon icon={faArrowsRotate} className='px-4' size='2x' />Refresh</button></div>
+                        <div className='ms-2 py-2 '><button className='btn btn-info w-100' onClick={handle4}><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle2}><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle3}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Other Courses</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle1}><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
 
                         <div className='ms-2 py-2' >
 
@@ -118,7 +156,9 @@ function Profile() {
                         <div className="col-md-5">
                             <div className='d-flex '>
                                 <button className='btn btn-info h-25 mt-5' onClick={handleShow}><FontAwesomeIcon icon={faPlus} />Add New Courses</button>
-                                <div><FontAwesomeIcon icon={faBars} className='text-light px-5 mt-5' size='2x' /></div>
+                                <div>
+                                     <FontAwesomeIcon icon={faBars} className='text-light px-5 mt-5' size='2x' />     
+                                 </div>
                             </div>
                         </div>
                     </div>
@@ -145,12 +185,30 @@ function Profile() {
                     </Modal>
                     <div className="row ">
                     <div>
+                        {display4 &&
+                            <div className='shadow mt-3 p-4 me-3 '>
+                                <Dashboard/>  
+                            </div>}
+                        
                             {display && <Book />}
                             {/*answers field */}
                             {!shows &&
                                 <div className='shadow mt-3 p-4 me-3'  >
                                     <Reviews />
                                 </div>}
+
+                             {display1 &&
+                                <div className='shadow mt-3 p-4 me-3'  >
+                                    <Wishlist />
+                                </div>}
+                             {display2 &&
+                                <div className='shadow mt-3 p-4 me-3'  >
+                                    <Myprofile />
+                                </div>}
+                            {display3 &&
+                                <div className='shadow mt-3 p-4 me-3'  >
+                                    <Enrolledcourses />
+                                </div>} 
                         </div>
                     </div>
                 </div>
