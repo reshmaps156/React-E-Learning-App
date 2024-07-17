@@ -125,6 +125,7 @@ function Profile({username}) {
     }
 
     const handleLogout = ()=>{
+        alert('You have logged out!!')
         navigate('/home')
     }
     
