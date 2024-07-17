@@ -22,10 +22,11 @@ import Adminpanel from './Adminpanel'
 import { addVideoApi, loginUser } from '../../services/allApi'
 import Lecture from './Lecture'
 import Other from './Other';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, Zoom, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 import Carosal from './Carosal';
+
 
 
 function Profile({ username }) {
@@ -112,7 +113,7 @@ function Profile({ username }) {
     }
 
     const handleLogout = () => {
-        alert('You have logged out!!')
+        toast('You have logged out!!')
         navigate('/home')
     }
 
@@ -313,7 +314,7 @@ function Profile({ username }) {
                 </div>
                 <div />
             </div>
-            <ToastContainer theme='colored' position='top-center' autoClose={2000} />
+            <ToastContainer  position='top-center' autoClose={1000} transition={Zoom}/>
         </>
     )
 }

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './Login.css'
 import { Link,  useNavigate } from 'react-router-dom'
 import { loginUser } from '../../services/allApi'
+import { Slide, ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function Login({setUsername}) {
@@ -13,7 +15,7 @@ function Login({setUsername}) {
  
   const handleLogin = async()=>{
     if(!password || !user){
-      alert('Please fill the form completely')
+      toast('Please fill the form completely')
     }else{
       const response = await loginUser()
      
@@ -26,12 +28,12 @@ function Login({setUsername}) {
     
      if( fullUsername.find((data)=>data==user ) && fullPassword.find((pwrd)=>pwrd==password) ){
       
-      alert('Login successful')
+      toast.success('Login successful')
       navigate('/profile')
      
       
      }else{
-      alert('check your username or password')
+      toast.error('check your username or password')
      }
 
     }
@@ -47,6 +49,7 @@ function Login({setUsername}) {
             <button type='button' className='w-100' onClick={handleLogin}>login</button>
             <p className='login-login'>Are you a new User? <Link to={'/register'} style={{textDecoration:'none'}}><span>Register</span></Link></p>
         </div>
+        <ToastContainer position="top-center" transition={Slide} theme='dark'/>
     </div>
   )
   

@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import './login/Login.css'
 import { Link } from 'react-router-dom'
 import { addUser } from '../services/allApi'
+import {  toast, ToastContainer, Zoom } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function Register() {
@@ -16,11 +19,12 @@ function Register() {
     event.preventDefault()
     const {username,email,password} = userDetails
     if(!username || !email || !password){
-      alert('Plese fill the form completely')
-    }else{
+      toast('Plese fill the form completely')
+    }
+    else{
       const result = await addUser(userDetails)
       if(result.status>=200 && result.status<300){
-        alert('User registered successfully')
+        toast.success('User registered successfully')
         setUserDetails({
           username :" ",
           email:" ",
@@ -30,7 +34,7 @@ function Register() {
        
         
       }else{
-        alert('Something went wrong')
+        toast('Something went wrong')
       }
     }
 
@@ -51,6 +55,7 @@ function Register() {
                 <p>By continuing, i agree to the terms of use & privacy policy.</p>
             </div>
         </div>
+        <ToastContainer position="top-center" transition={Zoom} theme='dark'/>
 
     </div>
     
