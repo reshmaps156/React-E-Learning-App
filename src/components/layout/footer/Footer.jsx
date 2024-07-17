@@ -10,8 +10,8 @@ function Footer() {
   return (
     <>
       <div className='footer-wrapper p-5 border-top'>
-        <div className="row w-100">
-          <div className="col-md-3  d-flex  flex-column align-items-center ">
+        <div className="row w-100 f-flex justify-content-center">
+          <div className="col-md-3  mt-5 d-flex  flex-column align-items-center ">
 
             <h4 className='mb-3'>Knowlege On Tap</h4>
             <div >
@@ -30,16 +30,16 @@ function Footer() {
               </Link>
             </div>
           </div>  
-          <div className="col-md-3 ">
+          <div className="col-md-2 mt-5 ">
             <div className='mx-5'>
               <h4 className='mb-3'>Links</h4>
-              <Link><p>Home</p></Link>
-              <p>About us</p>
+              <Link to={'/home'} className='text-decoration-none'><p>Home</p></Link>
+              <Link to={'/register'} className='text-decoration-none'><p>Sign up</p></Link>
               <p>Resourses</p>
               <p>Career</p>
             </div>
           </div>
-          <div className="col-md-3 ">
+          <div className="col-md-3 mt-5 ">
             <div className='mx-5'>
               <h4 className='mb-3'>Plans</h4>
               <p>For individuals</p>
@@ -49,7 +49,7 @@ function Footer() {
 
             </div>
           </div>
-          <div className="col-md-3 ">
+          <div className="col-md-4 mt-5 ">
             <h4 className='mb-3'>Follow Us!</h4>
             <div className='d-flex flex-nowrap'>
               <Link><div className='btnRound me-2'><FontAwesomeIcon icon={faYoutube} size='lg' className='text-secondary'/></div></Link>
