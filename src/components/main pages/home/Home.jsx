@@ -16,9 +16,9 @@ function Home() {
         <div className='p-5 justify-content-center align-items-center '>
         <h1 style={{fontWeight:'bold', fontSize:'60px'}}>Best Online Platform For <span style={{color:'#802BB1'}}>Learning</span></h1>
         <p className='text-dark mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, numquam assumenda maxime excepturi laboriosam commodi fugit eveniet mollitia magni quia tempora ab similique dolore voluptatibus! Animi reiciendis saepe totam cupiditate?</p>
-        <div className='mt-5'style={{marginLeft:'100px'}} >
-        <Link to={'/register'}><button className='btn btn-danger mt-3 rounded me-5 px-4 py-3'>Join for Free</button></Link>
-        <Link to={'/login'}><button className='btn btn-danger mt-3 rounded px-4 py-3'><FontAwesomeIcon icon={faPlay}  className='me-2'/>Sign in</button></Link>
+        <div className='mt-5' >
+        <Link to={'/register'}><button className='btn btn-danger mt-3 rounded me-5 px-4 py-3 w-50'>Join for Free</button></Link>
+        <Link to={'/login'}><button className='btn btn-success mt-3 rounded px-4 py-3 w-50'><FontAwesomeIcon icon={faPlay}  className='me-2'/>Sign in</button></Link>
         </div>
         </div>
         </Col>
