@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-    <Header/>
+    {/* <Header/> */}
       <Routes>
         <Route path='/' element={<Landingpage/>} />
         <Route path='/home' element={<Home/>}/>
