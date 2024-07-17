@@ -16,3 +16,15 @@ export const addCourseApi =async(reqbody)=>{
 export const getCourseApi =async()=>{
     return await commonApi('GET',`${serverUrl}/videos`,"")
 }
+
+export const addVideoApi = async(reqbody)=>{
+    return await commonApi('POST',`${serverUrl}/coursevideo`,reqbody)
+}
+
+export const getVideoApi = async() =>{
+    return await commonApi('GET',`${serverUrl}/coursevideo`,"")
+}
+
+export const deleteVideoApi = async(id)=>{
+    return await commonApi('DELETE',`${serverUrl}/coursevideo/${id}`,{})
+}

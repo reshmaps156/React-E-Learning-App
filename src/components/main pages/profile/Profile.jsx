@@ -27,8 +27,12 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import Adminpanel from './Adminpanel'
-import { loginUser } from '../../services/allApi'
+import { addVideoApi, loginUser } from '../../services/allApi'
 import Lecture from './Lecture'
+import Other from './Other';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 
@@ -44,10 +48,84 @@ function Profile() {
     const [display2, setDisplay2] = useState(false)
     const [display3, setDisplay3] = useState(false)
     const [display4, setDisplay4] = useState(false)
+    const [display5, setDisplay5] = useState(false)
     const [show, setShow] = useState(false);
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false)
+        setCoursevideo({
+            title:"",
+            image:"",
+            url:""
+        })
+    };
     const handleShow = () => setShow(true);
+    
+    const [addStatus , setAddStatus] = useState([])
 
+    const [coursevideo , setCoursevideo] = useState({
+        title:"",
+        image:"",
+        url:""
+    })
+
+    const valiadateCourse = (e)=>{
+        console.log(e.target.value);
+        const course = e.target.value
+        if(course.endsWith('?si=fgC7Ew9-B-MhOzfX')){
+            const yTkey = course.slice(-31,-20)
+            console.log(yTkey);
+            let embedCourse = `https://www.youtube.com/embed/${yTkey}`
+            setCoursevideo({...coursevideo,url:embedCourse})
+          }  
+          else if(course.startsWith('https://www.youtube.com/watch?')){
+            const yTkey = course.slice(29,40)
+            console.log(yTkey);
+            let embedCourse = `https://www.youtube.com/embed/${yTkey}`
+            setCoursevideo({...coursevideo,url:embedCourse})
+          }
+          else if(course.startsWith('https://youtu.be')){
+            const yTkey = course.slice(17,28)
+            console.log(yTkey);
+            let embedCourse = `https://www.youtube.com/embed/${yTkey}`
+            setCoursevideo({...coursevideo,url:embedCourse})
+          }
+             
+          else{
+            const yTkey = course.slice(-11)
+            console.log(yTkey);
+            let embedCourse = `https://www.youtube.com/embed/${yTkey}`
+            setCoursevideo({...coursevideo,url:embedCourse})
+          }
+        
+    }
+
+    console.log(coursevideo);
+
+    const handleUpload = async(e)=>{
+        e.preventDefault()
+        const {title , image , url} = coursevideo
+
+        if(!title || !image || !url){
+            toast.info('Please fill the form completely')
+        }
+        else{
+            const result = await addVideoApi(coursevideo)
+            console.log(result);
+            if(result.status>=200 && result.status<300){
+                toast.success('video Uploaded successfully')
+                setAddStatus(result.data)
+                handleClose()
+              }
+              else{
+                toast.error('something went wrong')
+                handleClose()
+              }
+        }
+    }
+
+    
+
+    
     const handleBook = () => {
         setDisplay(true)
     }
@@ -62,7 +140,10 @@ function Profile() {
     }
     const handle4 = ()=>{
         setDisplay4(true)
-}
+    }
+    const handle5 = ()=>{
+        setDisplay5(true)
+    }
 
     const handleBookClose = () => {
         setDisplay(false)
@@ -70,6 +151,7 @@ function Profile() {
         setDisplay2(false)
         setDisplay3(false)
         setDisplay4(false)
+        setDisplay5(false)
     }
     const handleAdmin = async () => {
         const result = await loginUser()
@@ -100,7 +182,7 @@ function Profile() {
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle3}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100'><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Other Courses</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle5}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Other Courses</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
 
@@ -178,16 +260,16 @@ function Profile() {
                         <Modal.Body>
                             <p>Please fill the following details</p>
                             <form className='border p-3 rounded border-secondary'>
-                                <input type="text" placeholder='Course Title' className='form-control' />
-                                <input type="text" placeholder='Course Image' className='form-control mt-3' />
-                                <input type="text" placeholder='Course Url' className='form-control mt-3' />
+                                <input type="text" placeholder='Course Title' className='form-control' onChange={(e)=>setCoursevideo({...coursevideo,title:e.target.value})} />
+                                <input type="text" placeholder='Course Image' className='form-control mt-3' onChange={(e)=>setCoursevideo({...coursevideo,image:e.target.value})} />
+                                <input type="text" placeholder='Course Url' className='form-control mt-3' onChange={(e)=>valiadateCourse(e)} />
                             </form>
                         </Modal.Body>
                         <Modal.Footer>
                             <Button variant="secondary" onClick={handleClose}>
                                 Cancel
                             </Button>
-                            <Button variant="primary" onClick={handleClose}>
+                            <Button variant="primary" onClick={handleUpload}>
                                 upload
                             </Button>
                         </Modal.Footer>
@@ -219,7 +301,11 @@ function Profile() {
                             {display3 &&
                                 <div className='shadow mt-3 p-4 me-3'  >
                                     <Enrolledcourses />
-                                </div>} 
+                                </div>}
+                                {display5 &&
+                                    <div className='shadow mt-3 p-4 me-3'  >
+                                    <Other addStatus={addStatus} />
+                                </div>}
                         </div>
                     </div>
                 </div>
@@ -228,6 +314,7 @@ function Profile() {
 
                 <div />
             </div>
+            <ToastContainer theme='colored' position='top-center' autoClose={2000} />
         </>
     )
 }
