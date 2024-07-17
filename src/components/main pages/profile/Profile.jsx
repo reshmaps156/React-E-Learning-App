@@ -41,7 +41,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-function Profile() {
+function Profile({username}) {
     const navigate = useNavigate()
     const [review, setReview] = useState(false);
     const [displaybook, setDisplayBook] = useState(false)
@@ -201,6 +201,7 @@ function Profile() {
    
     const handleAdmin = async () => {
         const result = await loginUser()
+        
         const roll = result.data.map((data) => data.roll)
         console.log(roll);
     }
@@ -286,7 +287,7 @@ function Profile() {
                                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="no image" style={{ width: '150px', height: '150px', borderRadius: '50%' }} className='mt-3 ms-5 mb-3' />
                                 </label>
                                 <div className='mt-5 ms-4'>
-                                    <h3 className='text-light'>User</h3>
+                                    <h3 className='text-light'>{username}</h3>
                                 </div>
                             </div>
                         </div>
