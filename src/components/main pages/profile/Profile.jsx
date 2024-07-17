@@ -8,7 +8,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons/faUser'
 import Carousel from 'react-bootstrap/Carousel';
 import { faBuildingColumns } from '@fortawesome/free-solid-svg-icons/faBuildingColumns'
 import { faPlus } from '@fortawesome/free-solid-svg-icons/faPlus'
-import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
+
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
@@ -23,7 +23,7 @@ import Dashboard from './Dashboard'
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons/faBookOpen'
 import { faHeart } from '@fortawesome/free-solid-svg-icons/faHeart'
 import './profile.css'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { faPowerOff, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import Adminpanel from './Adminpanel'
@@ -32,6 +32,7 @@ import Lecture from './Lecture'
 import Other from './Other';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -41,7 +42,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function Profile() {
-
+    const navigate = useNavigate()
     const [review, setReview] = useState(false);
     const [displaybook, setDisplayBook] = useState(false)
     const [displayWishlist, setDisplayWishlist] = useState(false)
@@ -123,6 +124,9 @@ function Profile() {
         }
     }
 
+    const handleLogout = ()=>{
+        navigate('/home')
+    }
     
 
 
@@ -287,10 +291,10 @@ function Profile() {
                             </div>
                         </div>
                         <div className="col-md-5">
-                            <div className='d-flex '>
+                            <div className='d-flex align-items-center'>
                                 <button className='btn btn-info h-25 mt-5' onClick={handleShow}><FontAwesomeIcon icon={faPlus} />Add New Courses</button>
                                 <div>
-                                     <FontAwesomeIcon icon={faBars} className='text-light px-5 mt-5' size='2x' />     
+                                <FontAwesomeIcon icon={faPowerOff} className='mt-5 ms-3' size='2xl'style={{color: "#FFD43B",}} onClick={handleLogout}/>
                                  </div>
                             </div>
                         </div>

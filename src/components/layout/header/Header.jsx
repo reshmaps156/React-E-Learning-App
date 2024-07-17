@@ -15,7 +15,7 @@ function Header() {
         <Navbar.Brand href="#home" className='me-5'>
           <div style={{fontWeight:'bold' , color:'rgb(219, 219, 219)',fontSize:'25px'}}>
           <FontAwesomeIcon icon={faBook} className='me-2'/> 
-          E-Learning
+          Bloomify
           </div>    
             </Navbar.Brand>
       </div>
