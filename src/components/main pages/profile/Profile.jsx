@@ -249,7 +249,7 @@ function Profile({ username }) {
                         </div>
                         <div className="col-md-3  col-6">
                             <div className='d-flex align-items-center'>
-                                <button className='btn btn-danger ' onClick={handleShow}><FontAwesomeIcon icon={faPlus} />Add New Courses</button>
+                                <button className='btn btn-danger ' onClick={handleShow}><FontAwesomeIcon icon={faPlus} />Paid Courses</button>
                                 <div>
                                     <FontAwesomeIcon icon={faPowerOff} className=' ms-3' size='2xl' style={{ color: "#FFD43B", }} onClick={handleLogout} />
                                 </div>

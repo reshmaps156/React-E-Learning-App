@@ -12,14 +12,14 @@ function Register() {
     username :" ",
     email:" ",
     password:" ",
-    roll:'user'
+    roll:"user"
   })
   // console.log(userDetails);
-  const handleRegister = async(event)=>{
-    event.preventDefault()
-    const {username,email,password} = userDetails
-    if(!username || !email || !password){
-      toast('Plese fill the form completely')
+  const handleRegister = async(e)=>{
+    e.preventDefault()
+    const {username,email,password,roll} = userDetails
+    if(!username || !email || !password || !roll){
+      toast.info('Please fill the form completely')
     }
     else{
       const result = await addUser(userDetails)
@@ -29,12 +29,12 @@ function Register() {
           username :" ",
           email:" ",
           password:" ",
-          roll:'user'
+          roll:"user"
         })
        
         
       }else{
-        toast('Something went wrong')
+        toast.error('Something went wrong')
       }
     }
 
@@ -44,9 +44,9 @@ function Register() {
         <div className="login-container w-50">
             <h1>Sign Up</h1>
             <div className="login-fields w-100">
-                <input type="text" placeholder='Your Name'  className='text-white' onChange={(event)=>{setUserDetails({...userDetails,username:event.target.value})}}/>
-                <input type="Email" placeholder='Email' className='text-white'  onChange={(event)=>{setUserDetails({...userDetails,email:event.target.value})}}/>
-                <input type="password" placeholder='Password' className='text-white'  onChange={(event)=>{setUserDetails({...userDetails,password:event.target.value})}}/>
+                <input type="text" placeholder='Your Name'  className='text-white' onChange={(e)=>setUserDetails({...userDetails,username:e.target.value})}/>
+                <input type="Email" placeholder='Email' className='text-white'  onChange={(e)=>setUserDetails({...userDetails,email:e.target.value})}/>
+                <input type="password" placeholder='Password' className='text-white'  onChange={(e)=>setUserDetails({...userDetails,password:e.target.value})}/>
             </div>
             <button type='button' className='w-100' onClick={handleRegister}>Continue</button>
             <p className='login-login'>Already have an account? <Link to={'/login'} style={{textDecoration:'none'}}><span>Login Here</span></Link></p>
@@ -55,7 +55,7 @@ function Register() {
                 <p>By continuing, i agree to the terms of use & privacy policy.</p>
             </div>
         </div>
-        <ToastContainer position="top-center" transition={Zoom} theme='dark'/>
+        <ToastContainer position="top-center" transition={Zoom} theme='dark' autoClose={2000}/>
 
     </div>
     
