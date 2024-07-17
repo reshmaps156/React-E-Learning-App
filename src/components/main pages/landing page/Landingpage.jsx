@@ -48,25 +48,25 @@ function Landingpage() {
                 <div className="row mt-5">
                     <div className="col-md-2"></div>
                     <div className="col-md-2">
-                        <div className=' m-5 text-center shadow rounded boxColor'>
+                        <div className=' mt-2  text-center shadow rounded boxColor'>
                             <p className='fw-bold fs-1 pt-1'>25K+</p>
                             <p className='fw-bold'>Classes</p>
                         </div>
                     </div>
                     <div className="col-md-2">
-                    <div className=' m-5 text-center shadow rounded boxColor'>
+                    <div className=' mt-2  text-center shadow rounded boxColor'>
                             <p className='fw-bold fs-1 pt-1'>600K+</p>
                             <p className='fw-bold'>Members</p>
                         </div>
                     </div>
                     <div className="col-md-2">
-                    <div className='m-5 text-center shadow rounded boxColor'>
+                    <div className='mt-2  text-center shadow rounded boxColor'>
                             <p className='fw-bold fs-1 pt-1'>8K+</p>
                             <p className='fw-bold'>Teachers</p>
                         </div>
                     </div>
                     <div className="col-md-2">
-                    <div className='m-5 text-center shadow rounded boxColor'>
+                    <div className='mt-2  text-center shadow rounded boxColor'>
                             <p className='fw-bold fs-1 pt-1 numColor'>4.8</p>
                             <p className='fw-bold'>App Rating</p>
                         </div>  

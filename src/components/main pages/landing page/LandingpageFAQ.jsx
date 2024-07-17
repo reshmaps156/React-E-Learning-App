@@ -6,10 +6,10 @@ function LandingpageFAQ() {
     return (
         <>
             <p className='text-warning'>Courses</p>
-            <Accordion>
-                <Accordion.Item eventKey="0">
-                    <Accordion.Header className='border rounded-0'>What is Bloomify ? </Accordion.Header>
-                    <Accordion.Body>
+            <Accordion flush >
+                <Accordion.Item eventKey="0" >
+                    <Accordion.Header className='border rounded-0' >What is Bloomify ? </Accordion.Header>
+                    <Accordion.Body >
                         {lorem}
                     </Accordion.Body>
                 </Accordion.Item>

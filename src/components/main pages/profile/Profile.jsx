@@ -288,7 +288,7 @@ function Profile({username}) {
                                     <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="no image" style={{ width: '150px', height: '150px', borderRadius: '50%' }} className='mt-3 ms-5 mb-3' />
                                 </label>
                                 <div className='mt-5 ms-4'>
-                                    <h3 className='text-light'>{username}</h3>
+                                    <h3 className='text-light' style={{textTransform:'capitalize'}}>{username}</h3>
                                 </div>
                             </div>
                         </div>
