@@ -18,7 +18,7 @@ function Lecture() {
     },[])
   return (
     <>
-     <h3 className='mt-5'>Lets start learning......</h3>
+     <h3 className='mt-5 fw-bold text-success'>Lets start learning......</h3>
      <Row className='w-100'>
        { lectureVideo?.map((data)=>(<Col md={6} sm={12} >
         <Content course={data}/>

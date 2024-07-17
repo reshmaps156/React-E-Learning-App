@@ -208,21 +208,21 @@ function Profile({ username }) {
                     <div className='py-1 ms-3'>
                         <div className='ms-2 py-2 '> <button className='btn btn-success w-100'><Adminpanel /></button></div>
 
-                        <div className='ms-2 py-2 '><button className='btn btn-info w-100' onClick={handleDashBoard}><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
+                        <div className='ms-2 py-2 '><button className='btn btn-danger w-100' onClick={handleDashBoard}><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleProfile}><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-danger w-100' onClick={handleProfile}><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleEnrolled}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-danger w-100' onClick={handleEnrolled}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleOtherCourse}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Other Courses</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-danger w-100' onClick={handleOtherCourse}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Other Courses</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-danger w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleWishlist}><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-danger w-100' onClick={handleWishlist}><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
 
                         <div className='ms-2 py-2' >
 
-                            <button type='button' className='btn btn-info w-100' onClick={handleReview}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
+                            <button type='button' className='btn btn-danger w-100' onClick={handleReview}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
                         </div>
                     </div>
                     {/*carosal part/ ads */}
@@ -248,7 +248,7 @@ function Profile({ username }) {
                         </div>
                         <div className="col-md-3  col-6">
                             <div className='d-flex align-items-center'>
-                                <button className='btn btn-info ' onClick={handleShow}><FontAwesomeIcon icon={faPlus} />Add New Courses</button>
+                                <button className='btn btn-danger ' onClick={handleShow}><FontAwesomeIcon icon={faPlus} />Add New Courses</button>
                                 <div>
                                     <FontAwesomeIcon icon={faPowerOff} className=' ms-3' size='2xl' style={{ color: "#FFD43B", }} onClick={handleLogout} />
                                 </div>
