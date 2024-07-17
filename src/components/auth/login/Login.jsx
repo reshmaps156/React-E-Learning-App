@@ -39,7 +39,7 @@ function Login({setUsername}) {
     }
   }
   return (
-    <div className='login w-100'>
+    <div className='login '>
         <div className="login-container w-50">
             <h1>Sign In</h1>
             <div className="login-fields w-100">

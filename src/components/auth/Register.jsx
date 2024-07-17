@@ -40,21 +40,25 @@ function Register() {
 
   }
   return (
-    <div className='login w-100'>
-        <div className="login-container w-50">
-            <h1>Sign Up</h1>
-            <div className="login-fields w-100">
-                <input type="text" placeholder='Your Name'  className='text-white' onChange={(event)=>{setUserDetails({...userDetails,username:event.target.value})}}/>
-                <input type="Email" placeholder='Email' className='text-white'  onChange={(event)=>{setUserDetails({...userDetails,email:event.target.value})}}/>
-                <input type="password" placeholder='Password' className='text-white'  onChange={(event)=>{setUserDetails({...userDetails,password:event.target.value})}}/>
-            </div>
-            <button type='button' className='w-100' onClick={handleRegister}>Continue</button>
-            <p className='login-login'>Already have an account? <Link to={'/login'} style={{textDecoration:'none'}}><span>Login Here</span></Link></p>
-            <div className="login-agree">
-                <input type="checkbox" name="" id="" />
-                <p>By continuing, i agree to the terms of use & privacy policy.</p>
-            </div>
-        </div>
+    <div className='login  row '>
+      <div className="col-md-4 col-1"></div>
+       <div className='col-md-4 col-10'>
+          <div className="login-container ">
+              <h1>Sign Up</h1>
+              <div className="login-fields w-100">
+                  <input type="text" placeholder='Your Name'  className='text-white' onChange={(event)=>{setUserDetails({...userDetails,username:event.target.value})}}/>
+                  <input type="Email" placeholder='Email' className='text-white'  onChange={(event)=>{setUserDetails({...userDetails,email:event.target.value})}}/>
+                  <input type="password" placeholder='Password' className='text-white'  onChange={(event)=>{setUserDetails({...userDetails,password:event.target.value})}}/>
+              </div>
+              <button type='button' className='w-100' onClick={handleRegister}>Continue</button>
+              <p className='login-login'>Already have an account? <Link to={'/login'} style={{textDecoration:'none'}}><span>Login Here</span></Link></p>
+              <div className="login-agree">
+                  <input type="checkbox" name="" id="" />
+                  <p>By continuing, i agree to the terms of use & privacy policy.</p>
+              </div>
+          </div>
+       </div>
+       <div className="col-md-4 col-1"></div>
         <ToastContainer position="top-center" transition={Zoom} theme='dark'/>
 
     </div>
