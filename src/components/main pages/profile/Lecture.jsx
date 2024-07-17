@@ -12,7 +12,7 @@ function Lecture() {
         // console.log(result.data);
         setLectureVideo(result.data)
     }
-    console.log(lectureVideo);
+    // console.log(lectureVideo);
     useEffect(()=>{
         getContent()
     },[])

@@ -11,7 +11,7 @@ function Adminpanel() {
     url: ""
   })
   
-  console.log(course);
+  // console.log(course);
   const validateLink= (e)=>{
     // console.log(e.target.value);
     const link = e.target.value
@@ -46,7 +46,7 @@ function Adminpanel() {
       alert('Please fill the form completely')
     }else{
       const response = await addCourseApi(course)
-      console.log(response);
+      // console.log(response);
       if(response.status>=200 && response.status<300){
         alert('Course added')
         handleClose()
