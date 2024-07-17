@@ -11,7 +11,7 @@ function Dashboard() {
           <div>
               <Row>
                   <Col sm={12} md={4} lg={3} className='mt-3  px-5 w-100 '>
-                      <h2 className='text-primary fw-bolder fs-3'>Your Dashboard Here</h2>
+                      
                       <div className='d-flex justify-content-center align-items-center'>
 
                           <Card style={{ width: '100%' }} className='m-2 shadow'>

@@ -42,13 +42,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Profile() {
 
-    const [shows, setShows] = useState(true);
-    const [display, setDisplay] = useState(false)
-    const [display1, setDisplay1] = useState(false)
-    const [display2, setDisplay2] = useState(false)
-    const [display3, setDisplay3] = useState(false)
-    const [display4, setDisplay4] = useState(false)
-    const [display5, setDisplay5] = useState(false)
+    const [review, setReview] = useState(false);
+    const [displaybook, setDisplayBook] = useState(false)
+    const [displayWishlist, setDisplayWishlist] = useState(false)
+    const [displayProfile, setDisplayProfile] = useState(false)
+    const [displayEnrolled, setDisplayEnrolled] = useState(false)
+    const [displayDashboard, setDisplayDashboard] = useState(true)
+    const [displayOtherCourse, setDisplayOtherCourse] = useState(false)
     const [show, setShow] = useState(false);
     const handleClose = () => {
         setShow(false)
@@ -125,34 +125,76 @@ function Profile() {
 
     
 
+
     
     const handleBook = () => {
-        setDisplay(true)
+        setDisplayBook(true)
+        setDisplayWishlist(false)
+        setDisplayEnrolled(false)
+        setDisplayOtherCourse(false)
+        setDisplayProfile(false)
+        setDisplayDashboard(false)
+        setReview(false)
+        
     }
-    const handle1 = ()=>{
-        setDisplay1(true)
+    const handleReview = ()=>{
+        setReview(true)
+        setDisplayOtherCourse(false)
+        setDisplayWishlist(false)
+        setDisplayBook(false)
+        setDisplayEnrolled(false)
+        setDisplayProfile(false)
+        setDisplayDashboard(false)
     }
-    const handle2 = ()=>{
-        setDisplay2(true)
+    const handleWishlist = ()=>{
+        setDisplayWishlist(true)
+        setDisplayBook(false)
+        setDisplayEnrolled(false)
+        setDisplayOtherCourse(false)
+        setDisplayProfile(false)
+        setDisplayDashboard(false)
+        setReview(false)
     }
-    const handle3 = ()=>{
-        setDisplay3(true)
+    const handleProfile = ()=>{
+       
+        setDisplayWishlist(false)
+        setDisplayBook(false)
+        setDisplayEnrolled(false)
+        setDisplayOtherCourse(false)
+        setDisplayProfile(true)
+        setDisplayDashboard(false)
+        setReview(false)
+        
     }
-    const handle4 = ()=>{
-        setDisplay4(true)
+    const handleEnrolled = ()=>{
+        setDisplayEnrolled(true)
+        setDisplayWishlist(false)
+        setDisplayBook(false)
+        setDisplayOtherCourse(false)
+        setDisplayProfile(false)
+        setDisplayDashboard(false)
+        setReview(false)
     }
-    const handle5 = ()=>{
-        setDisplay5(true)
+    const handleDashBoard = ()=>{
+        setDisplayDashboard(true)
+        setDisplayWishlist(false)
+        setDisplayBook(false)
+        setDisplayEnrolled(false)
+        setDisplayOtherCourse(false)
+        setDisplayProfile(false)
+        setReview(false)
+    }
+    const handleOtherCourse = ()=>{
+        setDisplayOtherCourse(true)
+        setDisplayWishlist(false)
+        setDisplayBook(false)
+        setDisplayEnrolled(false)
+        setDisplayProfile(false)
+        setDisplayDashboard(false)
+        setReview(false)
     }
 
-    const handleBookClose = () => {
-        setDisplay(false)
-        setDisplay1(false)
-        setDisplay2(false)
-        setDisplay3(false)
-        setDisplay4(false)
-        setDisplay5(false)
-    }
+   
     const handleAdmin = async () => {
         const result = await loginUser()
         const roll = result.data.map((data) => data.roll)
@@ -174,23 +216,23 @@ function Profile() {
                         </div>
 
                     <div className='py-1 ms-3'>
-                        <div className='ms-2 py-2 '> <button  onClick={handleBookClose} className='btn btn-success w-100'><Adminpanel/></button></div>
-                    <div className='ms-2 py-2 '> <button onClick={handleBookClose} className='btn btn-light w-100'><FontAwesomeIcon icon={faArrowsRotate} className='px-4' size='2x' />Refresh</button></div>
-                        <div className='ms-2 py-2 '><button className='btn btn-info w-100' onClick={handle4}><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
+                        <div className='ms-2 py-2 '> <button   className='btn btn-success w-100'><Adminpanel/></button></div>
+                    
+                        <div className='ms-2 py-2 '><button className='btn btn-info w-100' onClick={handleDashBoard}><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle2}><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleProfile}><FontAwesomeIcon icon={faUser} className='px-4' size='2x' />My Profile</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle3}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleEnrolled}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Enrolled Courses</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle5}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Other Courses</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleOtherCourse}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Other Courses</button></div>
 
                         <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleBook}><FontAwesomeIcon icon={faBookOpen} className='px-4' size='2x' />Books</button></div>
 
-                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handle1}><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
+                        <div className='ms-2 py-2'><button className='btn btn-info w-100' onClick={handleWishlist}><FontAwesomeIcon icon={faHeart} className='px-4' size='2x' />Wishlist</button></div>
 
                         <div className='ms-2 py-2' >
 
-                            <button type='button' className='btn btn-info w-100' onClick={() => setShows(!shows)}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
+                            <button type='button' className='btn btn-info w-100' onClick={handleReview}><FontAwesomeIcon icon={faStar} className='px-4' size='2x' />Reviews</button>
                         </div>
 
                     </div>
@@ -276,33 +318,33 @@ function Profile() {
                     </Modal>
                     <div className="row ">
                     <div>
-                        {display4 &&
+                        {displayDashboard &&
                             <div className='shadow mt-3 p-4 me-3 '>
                                  <Lecture/>
                                 <Dashboard/>  
                                
                             </div>}
                         
-                            {display && <Book />}
-                            {/*answers field */}
-                            {!shows &&
+                            {displaybook && <Book />}
+                            
+                            { review &&
                                 <div className='shadow mt-3 p-4 me-3'  >
                                     <Reviews />
                                 </div>}
 
-                             {display1 &&
+                             {displayWishlist &&
                                 <div className='shadow mt-3 p-4 me-3'  >
                                     <Wishlist />
                                 </div>}
-                             {display2 &&
+                             {displayProfile &&
                                 <div className='shadow mt-3 p-4 me-3'  >
                                     <Myprofile />
                                 </div>}
-                            {display3 &&
+                            {displayEnrolled &&
                                 <div className='shadow mt-3 p-4 me-3'  >
                                     <Enrolledcourses />
                                 </div>}
-                                {display5 &&
+                                {displayOtherCourse &&
                                     <div className='shadow mt-3 p-4 me-3'  >
                                     <Other addStatus={addStatus} />
                                 </div>}
