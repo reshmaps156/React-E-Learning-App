@@ -280,23 +280,23 @@ function Profile({username}) {
 
                 {/*profile navbars field */}
                 <div className='col-md-9 '>
-                    <div className="row w-100 d-flex justify-content-between bg-danger">
-                        <div className="col-md-7">
-                            <div className='d-flex'>
+                    <div className="row w-100 d-flex justify-content-between bg-danger align-items-center ">
+                        <div className="col-md-9  col-6">
+                            <div className='d-flex '>
                                 <label htmlFor="profileimg">
                                     <input id='profileimg' type="file" style={{ display: 'none' }} />
-                                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="no image" style={{ width: '150px', height: '150px', borderRadius: '50%' }} className='mt-3 ms-5 mb-3' />
+                                    <img src="https://cdn-icons-png.flaticon.com/512/9094/9094119.png" alt="no image" style={{ width: '150px', height: '150px', borderRadius: '50%' }} className='mt-3  mb-3 displayPic' />
                                 </label>
                                 <div className='mt-5 ms-4'>
-                                    <h3 className='text-light' style={{textTransform:'capitalize'}}>{username}</h3>
+                                    <h3 className='text-light fw-bold mt-3' style={{textTransform:'capitalize'}}>Welcome<span className='text-info'> {username}</span></h3>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-5">
+                        <div className="col-md-3  col-6">
                             <div className='d-flex align-items-center'>
-                                <button className='btn btn-info h-25 mt-5' onClick={handleShow}><FontAwesomeIcon icon={faPlus} />Add New Courses</button>
+                                <button className='btn btn-info ' onClick={handleShow}><FontAwesomeIcon icon={faPlus} />Add New Courses</button>
                                 <div>
-                                <FontAwesomeIcon icon={faPowerOff} className='mt-5 ms-3' size='2xl'style={{color: "#FFD43B",}} onClick={handleLogout}/>
+                                <FontAwesomeIcon icon={faPowerOff} className=' ms-3' size='2xl'style={{color: "#FFD43B",}} onClick={handleLogout}/>
                                  </div>
                             </div>
                         </div>

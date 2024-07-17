@@ -3,4 +3,7 @@
     .profileAlignment{
         flex-direction: column-reverse;
     }
+    .displayPic{
+       display: none;
+    }
 }
