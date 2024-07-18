@@ -69,7 +69,7 @@ function Adminpanel() {
   
   return (
     <div>
-        <button onClick={handleShow} className='btn btn-success w-100'>Add Course</button>
+        <button onClick={handleShow} className='btn btn-success w-100'>Available Course</button>
         <Modal show={show} onHide={handleClose} className='bd-dark'>
         <Modal.Header closeButton>
           <Modal.Title>Course</Modal.Title>
