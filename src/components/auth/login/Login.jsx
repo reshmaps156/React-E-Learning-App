@@ -6,7 +6,7 @@ import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-function Login({setUsername}) {
+function Login({setUsername,setUserRole}) {
   // const [email,setEmail] = useState("")
   const [user,setUser] = useState("")
   const [password,setPassword] = useState("")
@@ -19,20 +19,25 @@ function Login({setUsername}) {
     }else{
       const response = await loginUser()
      
-      console.log(response.data);
+      // console.log(response.data);
       setUsername(user)
       
-      // const fullEmail = response.data.map((data)=>data.email)
       const fullUsername = response.data.map((data)=>data.username)
       const fullPassword = response.data.map((data)=>data.password)
-    
-     if( fullUsername.find((data)=>data==user ) && fullPassword.find((pwrd)=>pwrd==password) ){
+      
+     
+    const currentUser = response.data.find((data)=>data.username ==user && response.data.find((data)=>data.password==password))
+    console.log(currentUser);
+     if( fullUsername.find((data)=>data==user ) && fullPassword.find((pwrd)=>pwrd==password ) ){
       
       toast.success('Login successful')
+      setUserRole(currentUser.role)
+      // console.log(currentUser.role);
       navigate('/profile')
      
       
-     }else{
+     }
+     else{
       toast.error('check your username or password')
      }
 

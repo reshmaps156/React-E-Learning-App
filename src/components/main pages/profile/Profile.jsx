@@ -29,7 +29,7 @@ import Carosal from './Carosal';
 
 
 
-function Profile({ username }) {
+function Profile({ username,userRole }) {
     const navigate = useNavigate()
     const [review, setReview] = useState(false);
     const [displaybook, setDisplayBook] = useState(false)
@@ -89,7 +89,7 @@ function Profile({ username }) {
     }
 
     // console.log(coursevideo);
-
+ 
     const handleUpload = async (e) => {
         e.preventDefault()
         const { title, image, url } = coursevideo
@@ -185,13 +185,6 @@ function Profile({ username }) {
     }
 
 
-    const handleAdmin = async () => {
-        const result = await loginUser()
-
-        const roll = result.data.map((data) => data.roll)
-        console.log(roll);
-    }
-    handleAdmin()
 
 
     return (
@@ -207,7 +200,10 @@ function Profile({ username }) {
                     </div>
 
                     <div className='py-1 ms-3'>
-                        <div className='ms-2 py-2 '> <button className='btn btn-success w-100'><Adminpanel /></button></div>
+                      
+                      { userRole==='admin' &&
+                        <div className='ms-2 py-2 '> <button className='btn btn-success w-100'><Adminpanel /></button></div>}
+                       
 
                         <div className='ms-2 py-2 '><button className='btn btn-danger w-100' onClick={handleDashBoard}><FontAwesomeIcon icon={faLayerGroup} className='px-4' size='2x' />Dashboard</button></div>
 

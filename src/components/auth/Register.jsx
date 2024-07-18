@@ -13,7 +13,7 @@ function Register() {
     username: '',
     email: '',
     password: '',
-    roll: 'user'
+    role: 'user'
   })
   const handleChange = (e) => {
     setUserDetails({

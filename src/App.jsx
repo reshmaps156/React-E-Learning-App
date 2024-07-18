@@ -14,14 +14,15 @@ import { useState } from 'react'
 function App() {
   
   const [username,setUsername] = useState("")
+  const [userRole,setUserRole]  = useState('user')
   return (
     <>
     {/* <Header/> */}
       <Routes>
         <Route path='/' element={<Landingpage/>} />
         <Route path='/home' element={<Home/>}/>
-        <Route path='/profile' element={<Profile username={username}/>}/>
-        <Route path='/login' element={<Login setUsername={setUsername}/>}/>
+        <Route path='/profile' element={<Profile username={username} userRole={userRole}/>}/>
+        <Route path='/login' element={<Login setUsername={setUsername} setUserRole={setUserRole}/>}/>
         <Route path='/register' element={<Register/>}/>
        <Route path='/about' element={<About/>}/>
 

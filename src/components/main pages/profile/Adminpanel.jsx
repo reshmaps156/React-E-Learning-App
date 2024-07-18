@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { addCourseApi } from '../../services/allApi';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShieldHalved } from '@fortawesome/free-solid-svg-icons';
+
 
 function Adminpanel() {
   const [show, setShow] = useState(false);
@@ -69,7 +72,7 @@ function Adminpanel() {
   
   return (
     <div>
-        <button onClick={handleShow} className='btn btn-success w-100'>Available Course</button>
+        <button onClick={handleShow} className='btn btn-success w-100'><FontAwesomeIcon icon={faShieldHalved} className='me-2'/>Admin</button>
         <Modal show={show} onHide={handleClose} className='bd-dark'>
         <Modal.Header closeButton>
           <Modal.Title>Course</Modal.Title>

@@ -38,10 +38,10 @@ function Landingpage() {
                         <h2 className='titleColor fw-bolder'>Transform Your learning experience with ease </h2>
                     </div>
                     <div className="col-md-5  ">
-                        <p><FontAwesomeIcon icon={faCircleCheck} size='xl' beatFade className='me-2'/> Flexible learning schedule</p>
-                       <p><FontAwesomeIcon icon={faCircleCheck} size='xl' beatFade className='me-2'/>Access a diverse selection of subjects</p>
-                       <p><FontAwesomeIcon icon={faCircleCheck} size='xl' beatFade className='me-2'/>Learn from industry experts and experienced educators</p>
-                       <p><FontAwesomeIcon icon={faCircleCheck} size='xl' beatFade className='me-2'/>Certificates of completion to showcase your achievements</p>
+                        <p><FontAwesomeIcon icon={faCircleCheck} size='xl' beatFade className='me-2 ms-sm-5 ms-md-1'/> Flexible learning schedule</p>
+                       <p><FontAwesomeIcon icon={faCircleCheck} size='xl' beatFade className='me-2  ms-sm-5 ms-md-1'/>Access a diverse selection of subjects</p>
+                       <p><FontAwesomeIcon icon={faCircleCheck} size='xl' beatFade className='me-2  ms-sm-5 ms-md-1'/>Learn from industry experts and experienced educators</p>
+                       <p><FontAwesomeIcon icon={faCircleCheck} size='xl' beatFade className='me-2  ms-sm-5 ms-md-1'/>Certificates of completion to showcase your achievements</p>
                     </div>
                     <div className="col-md-1"></div>
                 </div>
@@ -77,11 +77,11 @@ function Landingpage() {
                 <div className=" w-100 mt-5">
                     <h2 className='text-center  fs-1 text-light '>Frequently asked questions</h2>
                     <div className="row ">
-                        <div className="col-md-2"></div>
-                        <div className="col-md-8">
+                        <div className="col-md-2 col-1"></div>
+                        <div className="col-md-8 col-10">
                            <LandingpageFAQ/>
                         </div>
-                        <div className="col-md-2"></div>
+                        <div className="col-md-2 col-1"></div>
                     </div>
     
     
