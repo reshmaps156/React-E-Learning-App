@@ -2,6 +2,9 @@ import { commonApi } from "./commonApi"
 import { serverUrl } from "./serverUrl"
 
 export const addUser = async(reqbody)=>{
+    if(!reqbody.username || !reqbody.email || !reqbody.password){
+        throw new Error('Invalid request body')
+    }
     return await commonApi('POST',`${serverUrl}/users`,reqbody)
 }
 
