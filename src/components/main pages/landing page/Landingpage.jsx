@@ -24,7 +24,7 @@ function Landingpage() {
                         </div>
                         <div className="col-md-5">
                             <div className=''>
-                                <img width={'100%'} src="./src/assets/landingcover.png" alt="" className='landingImg'/>
+                                <img width={'100%'} src="./public/landingcover.png" alt="" className='landingImg'/>
                             </div>
                         </div>
                         
