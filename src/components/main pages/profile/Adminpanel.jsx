@@ -71,7 +71,7 @@ function Adminpanel() {
   const handleShow = () =>  setShow(true);
   
   return (
-    <div className='border border-light'>
+    <div>
         <button onClick={handleShow} className='btn btn-success w-100'><FontAwesomeIcon icon={faShieldHalved} className='me-2'/>Admin</button>
         <Modal show={show} onHide={handleClose} className='border text-light' >
         <Modal.Header closeButton>

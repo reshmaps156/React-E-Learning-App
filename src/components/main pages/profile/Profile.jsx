@@ -195,7 +195,7 @@ function Profile({ username,userRole,email}) {
                 <div className='shadow px-3 col-md-3' >
                     <div className='py-4 ms-4 me-3 mt-3 d-flex'>
 
-                        <FontAwesomeIcon icon={faBuildingColumns} size='4x' className='text-danger ms-5 px-5' />
+                        <FontAwesomeIcon icon={faBuildingColumns} size='3x' className='ms-5 px-5' style={{color:'#9b479f'}}/>
 
                     </div>
 
