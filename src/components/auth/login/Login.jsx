@@ -45,8 +45,8 @@ function Login({setUsername,setUserRole,setEmail}) {
     }
   }
   return (
-    <div className='login ' style={{color:'white'}}>
-        <div className="login-container w-50">
+    <div className='login '>
+        <div className="login-container w-50"  style={{color:'white'}}>
             <h1>Sign In</h1>
             <div className="login-fields w-100">
                 <input type="Email" placeholder='Username' className='text-white' onChange={(e)=>setUser(e.target.value)}/>
