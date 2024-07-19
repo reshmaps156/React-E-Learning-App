@@ -45,7 +45,7 @@ function Login({setUsername,setUserRole,setEmail}) {
     }
   }
   return (
-    <div className='login '>
+    <div className='login ' style={{color:'white'}}>
         <div className="login-container w-50">
             <h1>Sign In</h1>
             <div className="login-fields w-100">
