@@ -15,14 +15,15 @@ function App() {
   
   const [username,setUsername] = useState("")
   const [userRole,setUserRole]  = useState('user')
+  const [email,setEmail]=useState("")
   return (
     <>
     {/* <Header/> */}
       <Routes>
         <Route path='/' element={<Landingpage/>} />
         <Route path='/home' element={<Home/>}/>
-        <Route path='/profile' element={<Profile username={username} userRole={userRole}/>}/>
-        <Route path='/login' element={<Login setUsername={setUsername} setUserRole={setUserRole}/>}/>
+        <Route path='/profile' element={<Profile username={username} userRole={userRole} email={email}/>}/>
+        <Route path='/login' element={<Login setUsername={setUsername} setUserRole={setUserRole} setEmail={setEmail}/>}/>
         <Route path='/register' element={<Register/>}/>
        <Route path='/about' element={<About/>}/>
 

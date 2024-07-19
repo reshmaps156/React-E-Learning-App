@@ -6,7 +6,7 @@ import { Slide, ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-function Login({setUsername,setUserRole}) {
+function Login({setUsername,setUserRole,setEmail}) {
   // const [email,setEmail] = useState("")
   const [user,setUser] = useState("")
   const [password,setPassword] = useState("")
@@ -32,6 +32,7 @@ function Login({setUsername,setUserRole}) {
       
       toast.success('Login successful')
       setUserRole(currentUser.role)
+      setEmail(currentUser.email)
       // console.log(currentUser.role);
       navigate('/profile')
      

@@ -29,7 +29,7 @@ import Carosal from './Carosal';
 
 
 
-function Profile({ username,userRole }) {
+function Profile({ username,userRole,email}) {
     const navigate = useNavigate()
     const [review, setReview] = useState(false);
     const [displaybook, setDisplayBook] = useState(false)
@@ -295,7 +295,7 @@ function Profile({ username,userRole }) {
                                 </div>}
                             {displayProfile &&
                                 <div className='shadow mt-3 p-4 me-3'  >
-                                    <Myprofile />
+                                    <Myprofile username={username} email={email}/>
                                 </div>}
                             {displayEnrolled &&
                                 <div className='shadow mt-3 p-4 me-3'  >
