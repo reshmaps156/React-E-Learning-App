@@ -68,7 +68,7 @@ function Register() {
 
   }
   return (
-    <div className='login w-100'>
+    <div className='login w-100' style={{color:'white'}}>
       <div className="login-container w-50">
         <h1>Sign Up</h1>
         <div className=" w-100">
