@@ -73,7 +73,7 @@ function Adminpanel() {
   return (
     <div>
         <button onClick={handleShow} className='btn btn-success w-100'><FontAwesomeIcon icon={faShieldHalved} className='me-2'/>Admin</button>
-        <Modal show={show} onHide={handleClose} className='bd-dark'>
+        <Modal show={show} onHide={handleClose} className='border text-light' style={{border:'1px solid black'}}>
         <Modal.Header closeButton>
           <Modal.Title>Course</Modal.Title>
         </Modal.Header>
